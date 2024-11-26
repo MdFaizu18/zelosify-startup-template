@@ -190,10 +190,10 @@ const LandingNavbar = () => {
                         Contact
                     </a>
                     <div className="border-t border-purple-800 mt-4 pt-4">
-                        <button className="w-full hover:bg-purple-900/50 px-3 py-2 rounded-md text-base font-medium">
+                        <Link to='/login' className="w-full hover:bg-purple-900/50 px-3 py-2 rounded-md text-base font-medium">
                             Sign in
-                        </button>
-                        <button className="w-full bg-purple-600 hover:bg-purple-700 px-3 py-2 rounded-md text-base font-medium mt-2 flex items-center justify-center">
+                        </Link>
+                        <Link to='/register' className="w-full bg-purple-600 hover:bg-purple-700 px-3 py-2 rounded-md text-base font-medium mt-2 flex items-center justify-center">
                             Sign up
                             <svg
                                 className="w-4 h-4 ml-1"
@@ -209,7 +209,7 @@ const LandingNavbar = () => {
                                     d="M9 5l7 7-7 7"
                                 ></path>
                             </svg>
-                        </button>
+                        </Link>
                     </div>
                 </div>
             )}
