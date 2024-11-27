@@ -36,7 +36,7 @@ export default function ContactForm() {
         { name: 'Airbnb', logo: facebookImg },
         { name: 'Cadbury', logo: facebookImg },
         { name: 'Canon', logo: facebookImg },
-      
+
     ]
 
     return (

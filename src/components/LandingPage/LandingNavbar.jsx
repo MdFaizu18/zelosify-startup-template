@@ -1,29 +1,38 @@
-import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 const LandingNavbar = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false)
-    const [isTransparent, setIsTransparent] = useState(true)
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isTransparent, setIsTransparent] = useState(true);
+    const location = useLocation(); // Get the current location
 
     useEffect(() => {
         const handleScroll = () => {
             if (window.scrollY > 50) {
-                setIsTransparent(false)
+                setIsTransparent(false);
             } else {
-                setIsTransparent(true)
+                setIsTransparent(true);
             }
-        }
+        };
 
-        window.addEventListener('scroll', handleScroll)
+        window.addEventListener('scroll', handleScroll);
         return () => {
-            window.removeEventListener('scroll', handleScroll)
-        }
-    }, [])
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    // Scroll to top whenever the route changes
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [location]);
 
     // Function to close the mobile menu when a link is clicked
     const closeMenu = () => {
-        setIsMenuOpen(false)
-    }
+        setIsMenuOpen(false);
+    };
+
+    // Helper to determine if a link is active
+    const isActive = (path) => location.pathname === path;
 
     return (
         <nav
@@ -31,7 +40,6 @@ const LandingNavbar = () => {
         >
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between sm:justify-around h-16">
-
                     {/* Logo */}
                     <Link to="/" className="flex items-center space-x-2">
                         <div className="w-8 h-8 bg-purple-500 rounded-lg flex items-center justify-center">
@@ -42,15 +50,27 @@ const LandingNavbar = () => {
 
                     {/* Desktop Menu */}
                     <div className="hidden md:flex items-center space-x-4">
-                        <a href="#home" className="bg-purple-900/50 px-3 py-2 rounded-md text-sm font-medium">
+                        <Link
+                            to="/"
+                            className={`${isActive('/') ? 'bg-purple-900/50' : 'hover:bg-purple-900/50'} px-3 py-2 rounded-md text-sm font-medium`}
+                            onClick={closeMenu}
+                        >
                             Home
-                        </a>
-                        <a href="#features" className="hover:bg-purple-900/50 px-3 py-2 rounded-md text-sm font-medium">
+                        </Link>
+                        <Link
+                            to="/features"
+                            className={`${isActive('/features') ? 'bg-purple-900/50' : 'hover:bg-purple-900/50'} px-3 py-2 rounded-md text-sm font-medium`}
+                            onClick={closeMenu}
+                        >
                             Features
-                        </a>
-                        <a href="#pricing" className="hover:bg-purple-900/50 px-3 py-2 rounded-md text-sm font-medium">
+                        </Link>
+                        <Link
+                            to="/pricing"
+                            className={`${isActive('/pricing') ? 'bg-purple-900/50' : 'hover:bg-purple-900/50'} px-3 py-2 rounded-md text-sm font-medium`}
+                            onClick={closeMenu}
+                        >
                             Pricing
-                        </a>
+                        </Link>
                         <div className="relative group">
                             <button className="hover:bg-purple-900/50 px-3 py-2 rounded-md text-sm font-medium inline-flex items-center">
                                 Pages
@@ -70,31 +90,49 @@ const LandingNavbar = () => {
                                 </svg>
                             </button>
                             <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-[#1A1033] ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-in-out z-10">
-                                <a href="#about" className="block px-4 py-2 text-sm hover:bg-purple-900/50">
+                                <a
+                                    href="#about"
+                                    className="block px-4 py-2 text-sm hover:bg-purple-900/50"
+                                >
                                     About
                                 </a>
-                                <a href="#support" className="block px-4 py-2 text-sm hover:bg-purple-900/50">
+                                <a
+                                    href="#support"
+                                    className="block px-4 py-2 text-sm hover:bg-purple-900/50"
+                                >
                                     Support
                                 </a>
-                                <Link to="/faq" className="block px-4 py-2 text-sm hover:bg-purple-900/50">
+                                <Link
+                                    to="/faq"
+                                    className="block px-4 py-2 text-sm hover:bg-purple-900/50"
+                                >
                                     FAQ
                                 </Link>
                             </div>
                         </div>
-                        <a
-                            href="#contact"
-                            className="hover:bg-purple-900/50 px-3 py-2 rounded-md text-sm font-medium"
+                        <Link
+                            to="/contact"
+                            className={`${isActive('/contact') ? 'bg-purple-900/50' : 'hover:bg-purple-900/50'} px-3 py-2 rounded-md text-sm font-medium`}
+                            onClick={closeMenu}
                         >
                             Contact
-                        </a>
+                        </Link>
                     </div>
 
                     {/* Action Buttons */}
                     <div className="hidden md:flex space-x-4">
-                        <Link to='/login' className="hover:bg-purple-900/50 px-3 py-2 rounded-md text-sm font-medium">
+                        <Link
+                            to="/login"
+                            className={`${isActive('/login') ? 'bg-purple-900/50' : 'hover:bg-purple-900/50'} px-3 py-2 rounded-md text-sm font-medium`}
+                            onClick={closeMenu}
+                        >
                             Sign in
                         </Link>
-                        <Link to='/register' className="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-md text-sm font-medium flex items-center">
+                        <Link
+                            to="/register"
+                            className={`${isActive('/register') ? 'bg-purple-600' : 'hover:bg-purple-700'} px-4 py-2 rounded-md text-sm font-medium flex items-center`}
+                            onClick={closeMenu}
+                        >
                             Sign up
                             <svg
                                 className="w-4 h-4 ml-1"
@@ -161,61 +199,54 @@ const LandingNavbar = () => {
             {/* Mobile Menu */}
             {isMenuOpen && (
                 <div className="md:hidden px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-[#1A1033]">
-                    <a
-                        href="#home"
-                        className="bg-purple-900/50 block px-3 py-2 rounded-md text-base font-medium"
+                    <Link
+                        to="/"
+                        className={`${isActive('/') ? 'bg-purple-900/50' : 'hover:bg-purple-900/50'} block px-3 py-2 rounded-md text-base font-medium`}
                         onClick={closeMenu}
                     >
                         Home
-                    </a>
-                    <a
-                        href="#features"
-                        className="hover:bg-purple-900/50 block px-3 py-2 rounded-md text-base font-medium"
+                    </Link>
+                    <Link
+                        to="/features"
+                        className={`${isActive('/features') ? 'bg-purple-900/50' : 'hover:bg-purple-900/50'} block px-3 py-2 rounded-md text-base font-medium`}
                         onClick={closeMenu}
                     >
                         Features
-                    </a>
-                    <a
-                        href="#pricing"
-                        className="hover:bg-purple-900/50 block px-3 py-2 rounded-md text-base font-medium"
+                    </Link>
+                    <Link
+                        to="/pricing"
+                        className={`${isActive('/pricing') ? 'bg-purple-900/50' : 'hover:bg-purple-900/50'} block px-3 py-2 rounded-md text-base font-medium`}
                         onClick={closeMenu}
                     >
                         Pricing
-                    </a>
-                    <a
-                        href="#contact"
-                        className="hover:bg-purple-900/50 block px-3 py-2 rounded-md text-base font-medium"
+                    </Link>
+                    <Link
+                        to="/contact"
+                        className={`${isActive('/contact') ? 'bg-purple-900/50' : 'hover:bg-purple-900/50'} block px-3 py-2 rounded-md text-base font-medium`}
                         onClick={closeMenu}
                     >
                         Contact
-                    </a>
+                    </Link>
                     <div className="border-t border-purple-800 mt-4 pt-4">
-                        <Link to='/login' className="w-full hover:bg-purple-900/50 px-3 py-2 rounded-md text-base font-medium">
+                        <Link
+                            to="/login"
+                            className={`${isActive('/login') ? 'bg-purple-900/50' : 'hover:bg-purple-900/50'} block px-3 py-2 rounded-md text-base font-medium`}
+                            onClick={closeMenu}
+                        >
                             Sign in
                         </Link>
-                        <Link to='/register' className="w-full bg-purple-600 hover:bg-purple-700 px-3 py-2 rounded-md text-base font-medium mt-2 flex items-center justify-center">
+                        <Link
+                            to="/register"
+                            className={`${isActive('/register') ? 'bg-purple-600' : 'hover:bg-purple-700'} block px-4 py-2 rounded-md text-sm font-medium`}
+                            onClick={closeMenu}
+                        >
                             Sign up
-                            <svg
-                                className="w-4 h-4 ml-1"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth="2"
-                                    d="M9 5l7 7-7 7"
-                                ></path>
-                            </svg>
                         </Link>
                     </div>
                 </div>
             )}
         </nav>
-    )
-}
+    );
+};
 
-export default LandingNavbar
-
+export default LandingNavbar;

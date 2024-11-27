@@ -1,21 +1,22 @@
 import AnimatedDashboardPreview from "../components/LandingPage/AnimatedDashboardPreview";
 import BlogSection from "../components/LandingPage/BlogSection";
 import ContactForm from "../components/LandingPage/ContactPage";
-import FeatureCards from "../components/LandingPage/FeatureCards";
-import FeaturesSection from "../components/LandingPage/FeaturesSection";
+import FeatureCards from "../components/LandingPage/features/FeatureCards";
+import FeaturesSectionTwo from "../components/LandingPage/features/FeaturesSection";
+
 import FooterSection from "../components/LandingPage/FooterSection";
 import LandingNavbar from "../components/LandingPage/LandingNavbar";
-import PricingSection from "../components/LandingPage/PricingSection";
+import PricingSection from "../components/LandingPage/pricing/PricingSection";
 import TestimonialsSection from "../components/LandingPage/TestimonialsSection";
 
 export default function LandingPage() {
     return (
         <div className="min-h-screen bg-[#0F0720] text-white">
             {/* Navigation */}
-           <LandingNavbar/>
+            <LandingNavbar />
 
             {/* Hero Section */}
-            <main  id="home" className="container mx-auto px-4 pt-40 pb-32 text-center">
+            <main id="home" className="container mx-auto px-4 pt-40 pb-32 text-center">
                 <div className="inline-flex items-center bg-purple-900/30 px-4 py-2 rounded-full mb-8">
                     <span className="mr-2">✨</span>
                     <span className="text-purple-200">Your Ultimate Creative Companion!</span>
@@ -40,10 +41,10 @@ export default function LandingPage() {
                 </button>
 
                 {/* Dashboard Preview */}
-               <AnimatedDashboardPreview/>
+                <AnimatedDashboardPreview />
 
 
-                <FeaturesSection />
+                <FeaturesSectionTwo />
                 <FeatureCards />
                 <PricingSection />
                 <TestimonialsSection />

@@ -1,4 +1,4 @@
-export default function FeaturesSection() {
+export default function FeaturesSectionTwo() {
     const features = [
         {
             icon: (
