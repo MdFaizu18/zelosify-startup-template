@@ -3,7 +3,7 @@
 
 export default function FeatureSectionOne() {
     return (
-        <div className="min-h-screen  bg-[#0F0720] pt-12">
+        <div className="min-h-screen  bg-[#0F0720] pt-24">
             {/* Header Section */}
             {/* Main Content */}
             <div className="w-full px-4 py-12 md:py-2  sm:py-0">

@@ -30,7 +30,7 @@ export default function FooterSection() {
             <CTASection />
 
             {/* Newsletter Section */}
-            <div className="max-w-7xl mx-auto px-4 py-12">
+            {/* <div className="max-w-7xl mx-auto px-4 py-12">
                 <div className="flex flex-col md:flex-row justify-between items-center gap-6">
                     <div>
                         <h3 className="text-2xl font-bold text-white mb-2">News & Update</h3>
@@ -48,7 +48,7 @@ export default function FooterSection() {
                         </button>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
             {/* Footer Links */}
             <div className="border-t border-purple-900/50 mt-12">

@@ -38,8 +38,8 @@ const LandingNavbar = () => {
         <nav
             className={`fixed w-full z-50 transition-all duration-300 ${isTransparent ? 'bg-transparent' : 'bg-[#1A1033]'} text-white`}
         >
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex items-center justify-between sm:justify-around h-16">
+            <div className="container mx-auto px-4 sm:px-16 lg:px-36">
+                <div className="flex items-center justify-between sm:justify-between  h-16">
                     {/* Logo */}
                     <Link to="/" className="flex items-center space-x-2">
                         <div className="w-8 h-8 bg-purple-500 rounded-lg flex items-center justify-center">
@@ -71,45 +71,6 @@ const LandingNavbar = () => {
                         >
                             Pricing
                         </Link>
-                        <div className="relative group">
-                            <button className="hover:bg-purple-900/50 px-3 py-2 rounded-md text-sm font-medium inline-flex items-center">
-                                Pages
-                                <svg
-                                    className="w-4 h-4 ml-1"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth="2"
-                                        d="M19 9l-7 7-7-7"
-                                    ></path>
-                                </svg>
-                            </button>
-                            <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-[#1A1033] ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-in-out z-10">
-                                <a
-                                    href="#about"
-                                    className="block px-4 py-2 text-sm hover:bg-purple-900/50"
-                                >
-                                    About
-                                </a>
-                                <a
-                                    href="#support"
-                                    className="block px-4 py-2 text-sm hover:bg-purple-900/50"
-                                >
-                                    Support
-                                </a>
-                                <Link
-                                    to="/faq"
-                                    className="block px-4 py-2 text-sm hover:bg-purple-900/50"
-                                >
-                                    FAQ
-                                </Link>
-                            </div>
-                        </div>
                         <Link
                             to="/contact"
                             className={`${isActive('/contact') ? 'bg-purple-900/50' : 'hover:bg-purple-900/50'} px-3 py-2 rounded-md text-sm font-medium`}
@@ -117,23 +78,12 @@ const LandingNavbar = () => {
                         >
                             Contact
                         </Link>
-                    </div>
-
-                    {/* Action Buttons */}
-                    <div className="hidden md:flex space-x-4">
                         <Link
                             to="/login"
-                            className={`${isActive('/login') ? 'bg-purple-900/50' : 'hover:bg-purple-900/50'} px-3 py-2 rounded-md text-sm font-medium`}
+                            className={`${isActive('/login') ? 'bg-purple-600' : 'hover:bg-purple-700'} px-4 py-2 rounded-md text-sm font-medium flex items-center`}
                             onClick={closeMenu}
                         >
                             Sign in
-                        </Link>
-                        <Link
-                            to="/register"
-                            className={`${isActive('/register') ? 'bg-purple-600' : 'hover:bg-purple-700'} px-4 py-2 rounded-md text-sm font-medium flex items-center`}
-                            onClick={closeMenu}
-                        >
-                            Sign up
                             <svg
                                 className="w-4 h-4 ml-1"
                                 fill="none"
@@ -151,6 +101,7 @@ const LandingNavbar = () => {
                         </Link>
                     </div>
 
+    
                     {/* Mobile Menu Toggle */}
                     <div className="md:hidden -mr-2">
                         <button

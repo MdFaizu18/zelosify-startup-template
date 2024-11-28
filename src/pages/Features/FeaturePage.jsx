@@ -17,12 +17,12 @@ const FeaturePage = () => {
             <div>
                 <LandingNavbar />
             </div>
-            <div>
+            {/* <div>
                 <PageBanner
                     title="Features Page"
                     subtitle="Discover Our Powerful Tools"
                 />
-            </div>
+            </div> */}
             <div>
                 <AboutSectionOne />
             </div>

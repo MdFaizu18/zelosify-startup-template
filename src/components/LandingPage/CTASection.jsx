@@ -92,11 +92,11 @@ export default function CTASection() {
                 <div className="relative z-10">
                     <div className="inline-flex items-center bg-purple-900/30 px-4 py-2 rounded-full mb-8">
                         <span className="mr-2">✨</span>
-                        <span className="text-purple-200">Try our tool for Free</span>
+                        <span className="text-purple-200">Try our tool now</span>
                     </div>
 
                     <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                        What are you waiting for?
+                        Start saving time and money from your contracts today
                     </h2>
 
                     <p className="text-purple-200 max-w-2xl mx-auto mb-8">
@@ -105,7 +105,7 @@ export default function CTASection() {
                     </p>
 
                     <button className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-lg transition-colors duration-300">
-                        Get Started for Free
+                      BOOK A DEMO
                     </button>
                 </div>
             </div>

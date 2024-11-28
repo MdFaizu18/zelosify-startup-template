@@ -17,12 +17,12 @@ const PricingPage = () => {
           <div>
               <LandingNavbar />
           </div>
-          <div>
+          {/* <div>
               <PageBanner
                   title="Pricing Page"
                   subtitle="Discover Our Powerful Tools"
               />
-          </div>
+          </div> */}
           <div>
             <PricingSection/>
           </div>
