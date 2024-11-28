@@ -57,7 +57,7 @@ export default function PricingSection() {
     ]
 
     return (
-        <div className="min-h-screen bg-[#0F0720] py-24 px-4 relative overflow-hidden">
+        <div className=" bg-[#0F0720] py-24 px-4 relative overflow-hidden">
             {/* Animated background */}
             <div className="absolute inset-0 overflow-hidden">
                 <div className="absolute w-full h-full">

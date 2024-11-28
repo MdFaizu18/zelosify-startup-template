@@ -71,7 +71,7 @@ export default function CTASection() {
     }, []);
 
     return (
-        <div className="max-w-7xl mx-auto px-4 py-20">
+        <div className="max-w-7xl mx-auto px-4 md:px-12 py-20">
             <div className="bg-[#1A1033] rounded-3xl p-12 text-center relative overflow-hidden">
                 {/* Grid Background */}
                 <div
@@ -105,7 +105,7 @@ export default function CTASection() {
                     </p>
 
                     <button className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-lg transition-colors duration-300">
-                      BOOK A DEMO
+                        BOOK A DEMO
                     </button>
                 </div>
             </div>

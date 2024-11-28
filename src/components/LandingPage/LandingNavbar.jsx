@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import Logo from '../../assets/logos/main-logo.png'
 
 const LandingNavbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -41,12 +42,10 @@ const LandingNavbar = () => {
             <div className="container mx-auto px-4 sm:px-16 lg:px-36">
                 <div className="flex items-center justify-between sm:justify-between  h-16">
                     {/* Logo */}
-                    <Link to="/" className="flex items-center space-x-2">
-                        <div className="w-8 h-8 bg-purple-500 rounded-lg flex items-center justify-center">
-                            <span className="text-xl font-serif">𝓩</span>
-                        </div>
-                        <span className="text-xl font-semibold">Zelosify</span>
+                    <Link to="/" className="flex items-center justify-center space-x-2 h-full ">
+                        <img src={Logo} alt="Zelosify Logo" className="h-8 w-auto sm:h-10" />
                     </Link>
+
 
                     {/* Desktop Menu */}
                     <div className="hidden md:flex items-center space-x-4">
@@ -186,13 +185,7 @@ const LandingNavbar = () => {
                         >
                             Sign in
                         </Link>
-                        <Link
-                            to="/register"
-                            className={`${isActive('/register') ? 'bg-purple-600' : 'hover:bg-purple-700'} block px-4 py-2 rounded-md text-sm font-medium`}
-                            onClick={closeMenu}
-                        >
-                            Sign up
-                        </Link>
+                       
                     </div>
                 </div>
             )}

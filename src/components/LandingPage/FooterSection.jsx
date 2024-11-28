@@ -1,4 +1,7 @@
 import CTASection from "./CTASection"
+import Logo from '../../assets/logos/main-logo.png'
+import { Link } from "react-router-dom"
+
 
 export default function FooterSection() {
     const footerLinks = {
@@ -57,10 +60,9 @@ export default function FooterSection() {
                         {/* Logo and Description */}
                         <div className="lg:col-span-2">
                             <div className="flex items-center space-x-2 mb-6">
-                                <div className="w-8 h-8 bg-purple-500 rounded-lg flex items-center justify-center">
-                                    <span className="text-xl">••</span>
-                                </div>
-                                <span className="text-xl font-semibold text-white">Zelosify</span>
+                                <Link to="/" className="flex items-center justify-center space-x-2 h-full ">
+                                    <img src={Logo} alt="Zelosify Logo" className="h-8 w-auto sm:h-10" />
+                                </Link>
                             </div>
 
                             <p className="text-purple-200 mb-6">

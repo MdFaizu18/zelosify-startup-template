@@ -1,6 +1,6 @@
 export default function FeatureCards() {
     return (
-        <div className="bg-[#0F0720] min-h-[80vh] p-4 md:p-8 mt-8">
+        <div className="bg-[#0F0720]  p-4 md:p-8 md:px-40 mt-8">
             <div className="max-w-7xl mx-auto space-y-6">
                 {/* Main Feature Card */}
                 <div className="relative bg-[#1A1033] rounded-3xl p-8 overflow-hidden">

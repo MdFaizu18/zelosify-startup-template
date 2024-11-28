@@ -84,7 +84,7 @@ export default function ContactPage() {
 
                     <div className="grid md:grid-cols-2 gap-8 items-start">
                         {/* Form Card */}
-                        <div className="bg-[#1A1033]/30 backdrop-blur-sm rounded-3xl p-8 md:p-12 relative">
+                        <div className="bg-[#1A1033] backdrop-blur-sm rounded-3xl p-8 md:p-12 relative">
                             {/* Progress bar */}
                             <div className="absolute top-0 left-0 w-full h-1 bg-purple-900/30">
                                 <div
@@ -214,7 +214,7 @@ export default function ContactPage() {
 
                         {/* Contact Information */}
                         <div className="space-y-8 md:pl-8">
-                            <div className="bg-[#1A1033]/30 backdrop-blur-sm rounded-3xl p-8 space-y-8">
+                            <div className="bg-[#1A1033] backdrop-blur-sm rounded-3xl p-8 space-y-8">
                                 <h3 className="text-2xl font-bold text-white mb-6">Contact Information</h3>
 
                                 <div className="space-y-6">

@@ -48,7 +48,7 @@ export default function ContactForm() {
     }
 
     return (
-        <div className="min-h-screen bg-gradient-to-b from-[#0F0720] to-[#0A051A] py-20 px-4 relative overflow-hidden">
+        <div className=" bg-gradient-to-b from-[#0F0720] to-[#0A051A] py-20 px-4 relative overflow-hidden">
             {/* Animated background elements */}
             <div className="absolute inset-0">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-purple-900/20 via-transparent to-transparent" />
