@@ -8,15 +8,15 @@ import FooterSection from '../components/LandingPage/FooterSection'
 
 const NotFound = () => {
     return (
-       <div>
-       <div>
+        <div>
+            <div>
                 <Helmet>
                     <title>Error Page - 404 | zelosify</title>
                 </Helmet>
-       </div>
-       <div>
-        <LandingNavbar/>
-       </div>
+            </div>
+            <div>
+                <LandingNavbar />
+            </div>
             <div className="min-h-screen bg-[#0F0720] flex flex-col items-center justify-center p-4">
                 {/* 404 Illustration */}
                 <div className="w-full max-w-md mb-8">
@@ -85,9 +85,9 @@ const NotFound = () => {
                 </div>
             </div>
             <div>
-                <FooterSection/>
+                <FooterSection />
             </div>
-       </div>
+        </div>
     )
 }
 

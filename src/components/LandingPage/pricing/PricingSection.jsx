@@ -132,7 +132,7 @@ export default function PricingSection() {
                             {plan.recommended && (
                                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
                                     <div className="bg-gradient-to-r from-purple-500 to-pink-500 text-white text-sm font-medium px-4 py-1 rounded-full shadow-lg animate-pulse ">
-                                       Recommended
+                                        Recommended
                                     </div>
                                 </div>
                             )}
@@ -193,7 +193,7 @@ export default function PricingSection() {
                                     </button>
 
                                     <p className="text-center text-purple-200/40 text-sm mt-4">
-                                        No credit card required
+                                        No hidden charges
                                     </p>
                                 </div>
                             </div>
