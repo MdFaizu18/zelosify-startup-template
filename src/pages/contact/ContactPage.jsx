@@ -73,19 +73,19 @@ export default function ContactPage() {
 
                         <h2 className="text-5xl md:text-6xl font-bold mb-6">
                             <span className="bg-gradient-to-r from-white via-purple-200 to-purple-400 bg-clip-text text-transparent">
-                               Contact Us
+                                Contact Us
                             </span>
                         </h2>
 
                         <p className="text-purple-200/80 max-w-2xl mx-auto text-lg mb-12">
                             Have questions about our AI Tool? We're here to help. Reach out to us and we'll get back to you as soon as possible.
                         </p>
-                          
+
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-8 items-start">
                         {/* Form Card */}
-                     <ContactForm/>
+                        <ContactForm />
 
                         {/* Contact Information */}
                         <div className="space-y-8 md:pl-8">
@@ -136,6 +136,16 @@ export default function ContactPage() {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div>
+                <button
+                    className="fixed bottom-8 right-8 bg-purple-600 p-3 rounded-lg hover:bg-purple-700"
+                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                >
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+                    </svg>
+                </button>
             </div>
 
             <FooterSection />
