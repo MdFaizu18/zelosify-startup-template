@@ -8,20 +8,19 @@ export default function FeatureCards() {
                     <div className="relative z-10 max-w-xl">
                         <div className="inline-flex items-center bg-purple-900/30 px-4 py-2 rounded-full mb-6">
                             <span className="mr-2">✨</span>
-                            <span className="text-purple-200">AI-Powered Writing Tool</span>
+                            <span className="text-purple-200">The new era of vendor relationship is here</span>
                         </div>
 
                         <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                            Intelligent Writing Assistance
+                            Simplify Contract Management
                         </h2>
 
                         <p className="text-purple-200 mb-8">
-                            Our AI writing tool is designed to empower you with exceptional writing capabilities,
-                            making the writing process...
+                            Easily handle large volumes of contracts with centralized organization and advanced analytics.
                         </p>
 
                         <button className="inline-flex items-center bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-full transition-colors duration-300">
-                            Learn more
+                            Join now
                             <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                             </svg>
@@ -53,12 +52,11 @@ export default function FeatureCards() {
                         </div>
 
                         <h3 className="text-2xl font-bold text-white mb-4">
-                            Empowering Writing Excellence
+                            Recover Hidden Value
                         </h3>
 
                         <p className="text-purple-200">
-                            Our AI writing tool is designed to empower you with exceptional writing capabilities,
-                            making the writing process...
+                            Spot and recover missed opportunities buried in complex vendor agreements...
                         </p>
                     </div>
 
@@ -71,11 +69,11 @@ export default function FeatureCards() {
                         </div>
 
                         <h3 className="text-2xl font-bold text-white mb-4">
-                            Grammar and Spell Check
+                            Make Smarter Decisions
                         </h3>
 
                         <p className="text-purple-200">
-                            Our AI writing tool is designed to empower you with exceptional writing capabilities.
+                            Gain instant insights to optimize vendor performance and contract term
                         </p>
                     </div>
                 </div>

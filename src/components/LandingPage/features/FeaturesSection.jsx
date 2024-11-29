@@ -1,94 +1,170 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
-import { motion, useInView, useAnimation } from 'framer-motion'
+import React, { useState, useEffect, useRef } from 'react'
+import { motion, useAnimation, useMotionValue, useTransform } from 'framer-motion'
+import featuresImg from '../../../assets/images/features.webp'
+
+const features = [
+    {
+        title: "Centralized Contract Intelligence",
+        description: "Aggregate, organize, and access all your contract data in one unified platform, turning unstructured information into actionable insights instantly.",
+        color: "#FF6B6B",
+        image: featuresImg
+    },
+    {
+        title: "Search with Confidence",
+        description: "Get instant answers to your queries with highlighted citations, ensuring accuracy and reliability every time.",
+        color: "#4ECDC4",
+        image: featuresImg
+    },
+    {
+        title: "Insights That Drive Action",
+        description: "Uncover deep insights from contracts using advanced generative AI, empowering smarter and faster decisions.",
+        color: "#FFB7D1",
+        image: featuresImg
+    },
+    // {
+    //     title: "Multilingual Support",
+    //     description: "Break language barriers with instant translation and localization features, expanding your reach to a global audience.",
+    //     color: "#F7B731"
+    // },
+    // {
+    //     title: "SEO Optimization",
+    //     description: "Boost your content's visibility with built-in SEO tools that help your writing rank higher in search results.",
+    //     color: "#A55EEA"
+    // }
+]
+
+const Planet = ({ feature, index, isActive, onClick }) => {
+    return (
+        <motion.div
+            className="cursor-pointer flex items-center mb-12 last:mb-0"
+            whileHover={{ scale: 1.05 }}
+            onClick={onClick}
+        >
+            <motion.div
+                className="w-16 h-16 rounded-full flex items-center justify-center text-white font-bold mr-6 shrink-0"
+                style={{ backgroundColor: feature.color }}
+                animate={{ scale: isActive ? 1.2 : 1 }}
+            >
+                {index + 1}
+            </motion.div>
+            <div className="flex-grow">
+                <h3 className="text-xl font-bold text-white mb-2">{feature.title}</h3>
+                <p className="text-purple-200/80">{feature.description}</p>
+            </div>
+        </motion.div>
+    )
+}
 
 export default function FeaturesSectionTwo() {
-    const controls = useAnimation()
-    const ref = useRef(null)
-    const isInView = useInView(ref, { once: true, margin: "-100px" })
-    const [isVisible, setIsVisible] = useState(false)
+    const [activeFeature, setActiveFeature] = useState(0)
+    const containerRef = useRef(null)
+    const mouseY = useMotionValue(0)
+
+    const rotateX = useTransform(mouseY, [0, 300], [-5, 5])
 
     useEffect(() => {
-        if (isInView) {
-            controls.start('visible')
-        }
-    }, [isInView, controls])
-
-    useEffect(() => {
-        const toggleVisibility = () => {
-            setIsVisible(window.pageYOffset > 300)
+        const handleMouseMove = (e) => {
+            const rect = containerRef.current.getBoundingClientRect()
+            mouseY.set(e.clientY - rect.top)
         }
 
-        window.addEventListener('scroll', toggleVisibility)
-        return () => window.removeEventListener('scroll', toggleVisibility)
-    }, [])
-
-    const scrollToTop = () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' })
-    }
-
-    const features = [
-        { icon: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>, title: "Intelligent Writing Assistance", description: "Our AI writing tool analyzes your content, suggests improvements," },
-        { icon: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>, title: "Grammar and Spell Check", description: "Say goodbye to embarrassing typos and grammar mistakes" },
-        { icon: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>, title: "Plagiarism Detection", description: "Originality is key, and our AI writing tool helps you maintain it" },
-        { icon: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" /></svg>, title: "Voice to Text Conversion", description: "Transform your spoken words into written text easily & effortlessly" },
-        { icon: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" /></svg>, title: "Style and Tone Adaptation", description: "Whether you need a professional, or positive tone it has everyone" },
-        { icon: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h7" /></svg>, title: "Content Generation", description: "Need inspiration or assistance with generating content?" },
-    ]
-
-    const containerVariants = {
-        hidden: {},
-        visible: { transition: { staggerChildren: 0.1 } },
-    }
-
-    const itemVariants = {
-        hidden: { opacity: 0, y: 20, scale: 0.95 },
-        visible: { opacity: 1, y: 0, scale: 1, transition: { type: "spring", stiffness: 100, damping: 10 } },
-    }
+        containerRef.current.addEventListener('mousemove', handleMouseMove)
+        return () => {
+            containerRef.current?.removeEventListener('mousemove', handleMouseMove)
+        }
+    }, [mouseY])
 
     return (
-        <section className="bg-gradient-to-b from-[#1A1033] to-[#0F071F] py-20 px-4 sm:px-32 relative overflow-hidden" id="features">
-            <div className="max-w-6xl mx-auto relative">
-                <motion.div className="text-center mb-20">
-                
-                    <motion.h2 className="text-5xl md:text-6xl font-bold mb-6">
+        <section className="bg-[#0F071F] min-h-screen flex items-center justify-center overflow-hidden relative py-20">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <motion.div
+                    className="text-center mb-20"
+                    initial={{ opacity: 0, y: -50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                >
+                    <h2 className="text-5xl md:text-6xl font-bold mb-6">
                         <span className="bg-gradient-to-r from-white via-purple-200 to-purple-400 bg-clip-text text-transparent">
-                           Key Features of our Tool
+                            Explore Our Universe of Features
                         </span>
-                    </motion.h2>
-                    <motion.p className="text-purple-200/80 max-w-3xl mx-auto text-lg">
-                        Our AI writing tool is designed to empower you with exceptional writing capabilities.
-                    </motion.p>
+                    </h2>
+                    <p className="text-purple-200/80 max-w-3xl mx-auto text-lg">
+                        Embark on a journey through our zelosify galaxy, where each feature is a world of possibilities.
+                    </p>
                 </motion.div>
-                <motion.div ref={ref} variants={containerVariants} initial="hidden" animate={controls} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {features.map((feature, index) => (
-                        <motion.div key={index} variants={itemVariants} className="group relative">
-                            <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-xl blur-xl group-hover:blur-2xl transition-all duration-300 opacity-0 group-hover:opacity-100" />
-                            <div className="bg-[#0F071F]/80 backdrop-blur-sm rounded-xl p-8 hover:bg-[#090413]/90 transition-all duration-500 relative h-full border border-purple-900/20 group-hover:border-purple-500/30">
-                                <motion.div className="bg-purple-900/30 w-12 h-12 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                                    <div className="text-purple-300 group-hover:text-purple-200 transition-colors duration-300">
-                                        {feature.icon}
-                                    </div>
-                                </motion.div>
-                                <h3 className="text-xl font-semibold text-white mb-4 group-hover:text-purple-200 transition-colors duration-300">
-                                    {feature.title}
-                                </h3>
-                                <p className="text-purple-200/70 group-hover:text-purple-200 transition-colors duration-300">
-                                    {feature.description}
-                                </p>
-                            </div>
+
+                <div className="flex flex-col md:flex-row items-start justify-between">
+                    <motion.div
+                        ref={containerRef}
+                        className="w-full md:w-1/2 perspective-1000 mb-12 md:mb-0"
+                        style={{ rotateX }}
+                    >
+                        {/* Central "sun" representing the main product */}
+                        <motion.div
+                            className="w-32 h-32 rounded-full bg-yellow-500 mx-auto mb-12"
+                            animate={{ rotate: 360 }}
+                            transition={{ duration: 200, repeat: Infinity, ease: "linear" }}
+                        >
+                            <div className="w-full h-full rounded-full bg-gradient-to-br from-yellow-300 to-yellow-600 animate-pulse" />
                         </motion.div>
-                    ))}
-                </motion.div>
+
+                        {/* Vertical line connecting planets */}
+                        <div className="absolute left-1/2 top-32 bottom-0 w-1 bg-purple-500/20 transform -translate-x-1/2" />
+
+                        {/* Planets representing features */}
+                        {features.map((feature, index) => (
+                            <Planet
+                                key={index}
+                                feature={feature}
+                                index={index}
+                                isActive={activeFeature === index}
+                                onClick={() => setActiveFeature(index)}
+                            />
+                        ))}
+                    </motion.div>
+
+                    {/* Feature description */}
+                    <motion.div
+                        className="w-full md:w-1/2 md:pl-12"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.5 }}
+                    >
+                        <h3 className="text-3xl font-bold text-white mb-4">
+                            {features[activeFeature].title}
+                        </h3>
+                        <p className="text-purple-200/80">
+                            {features[activeFeature].description}
+                        </p>
+                        <div className='lg:px-14 sm:px-2'>
+                            <img className='h-[400px] mt-12 rounded-lg'
+                            src={features[activeFeature].image} alt="" />
+                        </div>
+                    </motion.div>
+                </div>
             </div>
-            {isVisible && (
-                <motion.button onClick={scrollToTop} className="fixed bottom-8 right-8 bg-purple-600 p-3 rounded-lg hover:bg-purple-700 transition-all duration-300 hover:scale-110 z-50">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
-                    </svg>
-                </motion.button>
-            )}
+
+            {/* Background stars */}
+            <div className="absolute inset-0 overflow-hidden">
+                {[...Array(50)].map((_, i) => (
+                    <div
+                        key={i}
+                        className="absolute rounded-full bg-white animate-twinkle"
+                        style={{
+                            width: `${Math.random() * 2 + 1}px`,
+                            height: `${Math.random() * 2 + 1}px`,
+                            top: `${Math.random() * 100}%`,
+                            left: `${Math.random() * 100}%`,
+                            animationDelay: `${Math.random() * 5}s`,
+                            animationDuration: `${Math.random() * 5 + 5}s`,
+                        }}
+                    />
+                ))}
+            </div>
         </section>
     )
 }
+
+

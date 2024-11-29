@@ -9,6 +9,7 @@ import FooterSection from "../../components/LandingPage/FooterSection";
 import LandingNavbar from "../../components/LandingPage/LandingNavbar";
 import PricingSection from "../../components/LandingPage/pricing/PricingSection";
 import TestimonialsSection from "../../components/LandingPage/TestimonialsSection";
+import FAQSection from "../../components/LandingPage/pricing/FAQSection";
 
 export default function LandingPage() {
     return (
@@ -21,7 +22,6 @@ export default function LandingPage() {
             <div className="min-h-screen bg-[#0F0720] text-white">
                 {/* Navigation */}
                 <LandingNavbar />
-                
 
                 {/* Hero Section */}
                 <main id="home" className="container mx-auto px-4 pt-40 pb-32 text-center">
@@ -30,27 +30,27 @@ export default function LandingPage() {
                         bg-gradient-to-r from-purple-300 via-purple-100 to-purple-300 bg-clip-text text-transparent"
                         style={{ lineHeight: '1.2' }}
                     >
-                        Elevate Your Content with Our AI-Powered Writing Tool
+                        Every Contract, Clause and vendor Matters
                     </h1>
                     <p className="text-gray-400 text-lg md:text-lg max-w-3xl mx-auto mb-12">
-                        Highly customizable Tailwind CSS template for AI - Tool, Startup, Software, App and Product Sites.
-                        Comes with everything you need - pages, features, sections, components and more that you can easily customize.
-                    </p>
+                        Zelosify makes it Effortless to manage contracts, unlock instant insights, and boost your bottom line.  </p>
 
                     <button className="bg-purple-600 hover:bg-purple-700 text-lg px-6 py-2 rounded-lg font-medium">
-                        Book Your Demo
+                        Join Private Beta
+
                     </button>
                     {/* Dashboard Preview */}
                     <AnimatedDashboardPreview />
                 </main>
 
-                    <FeaturesSectionTwo />
-                    <FeatureCards />
-                    <PricingSection />
-                    {/* <TestimonialsSection /> */}
-                    <ContactForm />
-                    {/* <BlogSection /> */}
-                    <FooterSection />
+                <FeaturesSectionTwo />
+                <FeatureCards />
+                {/* <PricingSection /> */}
+                {/* <TestimonialsSection /> */}
+                <ContactForm />
+                <FAQSection/>
+                {/* <BlogSection /> */}
+                <FooterSection />
 
                 {/* Scroll to top button */}
                 <button className="fixed bottom-8 right-8 bg-purple-600 p-3 rounded-lg hover:bg-purple-700">

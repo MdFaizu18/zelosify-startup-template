@@ -6,45 +6,53 @@ export default function FAQSection() {
 
     const faqs = [
         {
-            question: "What Is AI Tool Content Writing Tool?",
-            answer: "Our AI Tool is an advanced content writing assistant that helps you create high-quality content efficiently. It uses state-of-the-art AI technology to help you generate, edit, and optimize your writing."
+            question: "What exactly is Zelosify?",
+            answer: "Zelosify is a vendor contract management software designed to maximize the value of your vendor agreements."
         },
         {
-            question: "Is there a limit on how much content I can generate?",
-            answer: "The content generation limits depend on your subscription plan. Free users get a specific number of credits monthly, while premium users enjoy higher or unlimited generation capabilities."
+            question: "What does Zelosify provide?",
+            answer: "It offers tools to manage contracts, gain insights, prevent revenue leaks, and ensure vendor compliance"
         },
         {
-            question: "Is it helpful for Digital Marketer or Content Writer?",
-            answer: "Yes, our AI Tool is specifically designed to assist both digital marketers and content writers. It helps with creating marketing copy, blog posts, social media content, and more while maintaining your brand's voice."
+            question: "Is my data safe with Zelosify?",
+            answer: "Yes, Zelosify is fully GDPR-compliant and prioritizes data security for our clients."
         },
         {
-            question: "What Languages does it support?",
-            answer: "Our AI Tool supports multiple languages including English, Spanish, French, German, Italian, Portuguese, and many more. We're constantly adding support for new languages."
+            question: "Can Zelosify handle large contract portfolios?",
+            answer: "Absolutely, it is built to manage and organize extensive vendor and contract data effortlessly."
         },
         {
-            question: "What is SEO Writing AI and how do I use it?",
-            answer: "SEO Writing AI is our specialized tool that helps you create search engine optimized content. It provides keyword suggestions, readability analysis, and optimization tips while you write."
-        }
+            question: "How does Zelosify prevent revenue losses?",
+            answer: "It identifies missed penalties, flags non-compliance, and provides actionable insights to protect your revenue."
+        },
+        {
+            question: "Is ZELOSIFY available for purchase",
+            answer: "ZELOSIFY is currently available only to private beta users. To know more about it, contact support@ZELOSIFY.COM."
+        },
     ]
 
     return (
-        <div className="min-h-screen bg-[#0F0720] py-20 px-4">
+        <div className=" bg-[#0F0720] py-20 px-4">
             <div className="max-w-3xl mx-auto">
                 {/* Header */}
                 <div className="text-center mb-16">
-                    <div className="inline-flex items-center bg-purple-900/30 px-4 py-2 rounded-full mb-8">
+                    {/* <div className="inline-flex items-center bg-purple-900/30 px-4 py-2 rounded-full mb-8">
                         <span className="mr-2">✨</span>
                         <span className="text-purple-200">Questions About our AI Tool?</span>
-                    </div>
+                    </div> */}
 
-                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                    <h2
+                        className="text-3xl md:text-6xl lg:text-5xl font-bold mb-8 max-w-5xl mx-auto
+                        bg-gradient-to-r from-purple-300 via-purple-100 to-purple-300 bg-clip-text text-transparent"
+                        style={{ lineHeight: '1.2' }}
+                    >
                         Frequently Asked Questions
                     </h2>
 
-                    <p className="text-purple-200 max-w-2xl mx-auto">
+                    {/* <p className="text-purple-200 max-w-2xl mx-auto">
                         Build SaaS AI applications using OpenAI and Next.js, this kit comes with pre-configured and
                         pre-built examples, making it easier to quickly kickstart your AI startup.
-                    </p>
+                    </p> */}
                 </div>
 
                 {/* FAQ Accordion */}

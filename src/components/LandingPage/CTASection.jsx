@@ -105,7 +105,7 @@ export default function CTASection() {
                     </p>
 
                     <button className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-lg transition-colors duration-300">
-                        BOOK A DEMO
+                        Join Private Beta
                     </button>
                 </div>
             </div>

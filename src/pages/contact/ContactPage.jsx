@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet';
 import LandingNavbar from '../../components/LandingPage/LandingNavbar';
 import FooterSection from '../../components/LandingPage/FooterSection';
 import { Sparkles, MapPin, Mail, Phone, Facebook, Twitter, Linkedin } from 'lucide-react';
+import ContactForm from '../../components/LandingPage/contact/ContactForm';
 
 
 export default function ContactPage() {
@@ -84,133 +85,7 @@ export default function ContactPage() {
 
                     <div className="grid md:grid-cols-2 gap-8 items-start">
                         {/* Form Card */}
-                        <div className="bg-[#1A1033] backdrop-blur-sm rounded-3xl p-8 md:p-12 relative">
-                            {/* Progress bar */}
-                            <div className="absolute top-0 left-0 w-full h-1 bg-purple-900/30">
-                                <div
-                                    className="h-full bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-500"
-                                    style={{ width: `${progress}%` }}
-                                />
-                            </div>
-
-                            <form onSubmit={(e) => e.preventDefault()} className="space-y-6">
-                                <div className="grid md:grid-cols-2 gap-6">
-                                    <div className="relative group">
-                                        <input
-                                            type="text"
-                                            id="firstName"
-                                            name="firstName"
-                                            value={formData.firstName}
-                                            onChange={handleInputChange}
-                                            className="peer w-full px-4 py-3 rounded-lg bg-[#1A1033]/50 border border-purple-900/50 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-600/50 focus:border-transparent transition-all duration-300"
-                                            placeholder="First name"
-                                        />
-                                        <label
-                                            htmlFor="firstName"
-                                            className="absolute left-4 -top-6 text-sm text-purple-200/80 transition-all duration-300 peer-placeholder-shown:text-base peer-placeholder-shown:text-purple-300/30 peer-placeholder-shown:top-3 peer-focus:-top-6 peer-focus:text-sm peer-focus:text-purple-200"
-                                        >
-                                            First name*
-                                        </label>
-                                    </div>
-
-                                    <div className="relative group">
-                                        <input
-                                            type="text"
-                                            id="lastName"
-                                            name="lastName"
-                                            value={formData.lastName}
-                                            onChange={handleInputChange}
-                                            className="peer w-full px-4 py-3 rounded-lg bg-[#1A1033]/50 border border-purple-900/50 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-600/50 focus:border-transparent transition-all duration-300"
-                                            placeholder="Last name"
-                                        />
-                                        <label
-                                            htmlFor="lastName"
-                                            className="absolute left-4 -top-6 text-sm text-purple-200/80 transition-all duration-300 peer-placeholder-shown:text-base peer-placeholder-shown:text-purple-300/30 peer-placeholder-shown:top-3 peer-focus:-top-6 peer-focus:text-sm peer-focus:text-purple-200"
-                                        >
-                                            Last name*
-                                        </label>
-                                    </div>
-                                </div>
-
-                                <div className="relative group">
-                                    <input
-                                        type="email"
-                                        id="email"
-                                        name="email"
-                                        value={formData.email}
-                                        onChange={handleInputChange}
-                                        className="peer w-full px-4 py-3 rounded-lg bg-[#1A1033]/50 border border-purple-900/50 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-600/50 focus:border-transparent transition-all duration-300"
-                                        placeholder="Email"
-                                    />
-                                    <label
-                                        htmlFor="email"
-                                        className="absolute left-4 -top-6 text-sm text-purple-200/80 transition-all duration-300 peer-placeholder-shown:text-base peer-placeholder-shown:text-purple-300/30 peer-placeholder-shown:top-3 peer-focus:-top-6 peer-focus:text-sm peer-focus:text-purple-200"
-                                    >
-                                        Email*
-                                    </label>
-                                </div>
-                                <div className="relative group">
-                                    <input
-                                        type="text"
-                                        id="phone"
-                                        name="phone"
-                                        value={formData.phone}
-                                        onChange={handleInputChange}
-                                        className="peer w-full px-4 py-3 rounded-lg bg-[#1A1033]/50 border border-purple-900/50 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-600/50 focus:border-transparent transition-all duration-300"
-                                        placeholder="Phone Number*"
-                                    />
-                                    <label
-                                        htmlFor="phone"
-                                        className="absolute left-4 -top-6 text-sm text-purple-200/80 transition-all duration-300 peer-placeholder-shown:text-base peer-placeholder-shown:text-purple-300/30 peer-placeholder-shown:top-3 peer-focus:-top-6 peer-focus:text-sm peer-focus:text-purple-200"
-                                    >
-                                        Phone Number*
-                                    </label>
-                                </div>
-                                <div className="relative group">
-                                    <input
-                                        type="text"
-                                        id="companyName"
-                                        name="companyName"
-                                        value={formData.companyName}
-                                        onChange={handleInputChange}
-                                        className="peer w-full px-4 py-3 rounded-lg bg-[#1A1033]/50 border border-purple-900/50 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-600/50 focus:border-transparent transition-all duration-300"
-                                        placeholder="Company Name*"
-                                    />
-                                    <label
-                                        htmlFor="companyName"
-                                        className="absolute left-4 -top-6 text-sm text-purple-200/80 transition-all duration-300 peer-placeholder-shown:text-base peer-placeholder-shown:text-purple-300/30 peer-placeholder-shown:top-3 peer-focus:-top-6 peer-focus:text-sm peer-focus:text-purple-200"
-                                    >
-                                        Company Name*
-                                    </label>
-                                </div>
-
-                                <div className="relative group">
-                                    <textarea
-                                        id="message"
-                                        name="message"
-                                        value={formData.message}
-                                        onChange={handleInputChange}
-                                        rows={4}
-                                        className="peer w-full px-4 py-3 rounded-lg bg-[#1A1033]/50 border border-purple-900/50 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-600/50 focus:border-transparent transition-all duration-300 resize-none"
-                                        placeholder="Your message"
-                                    />
-                                    <label
-                                        htmlFor="message"
-                                        className="absolute left-4 -top-6 text-sm text-purple-200/80 transition-all duration-300 peer-placeholder-shown:text-base peer-placeholder-shown:text-purple-300/30 peer-placeholder-shown:top-3 peer-focus:-top-6 peer-focus:text-sm peer-focus:text-purple-200"
-                                    >
-                                        Your message*
-                                    </label>
-                                </div>
-
-                                <button
-                                    type="submit"
-                                    className={`w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 ${progress === 100 ? 'opacity-100' : 'opacity-50 cursor-not-allowed'}`}
-                                    disabled={progress !== 100}
-                                >
-                                    Submit
-                                </button>
-                            </form>
-                        </div>
+                     <ContactForm/>
 
                         {/* Contact Information */}
                         <div className="space-y-8 md:pl-8">

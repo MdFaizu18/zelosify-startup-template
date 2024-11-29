@@ -6,25 +6,25 @@ import { Link } from "react-router-dom"
 export default function FooterSection() {
     const footerLinks = {
         Products: [
-            { name: 'Features', href: '#' },
+            { name: 'Features', href: '#features' },
             { name: 'Integrations', href: '#' },
             { name: 'Pricing', href: '#' },
             { name: 'Changelog', href: '#' },
             { name: 'Roadmap', href: '#' }
         ],
-        Company: [
-            { name: 'Privacy Policy', href: '#' },
-            { name: 'Refund Policy', href: '#' },
-            { name: 'Support', href: '#' },
-            { name: 'Community', href: '#' }
-        ],
-        Support: [
-            { name: 'Features', href: '#' },
-            { name: 'Integrations', href: '#' },
-            { name: 'Pricing', href: '#' },
-            { name: 'Changelog', href: '#' },
-            { name: 'Roadmap', href: '#' }
-        ]
+        // Company: [
+        //     { name: 'Privacy Policy', href: '#' },
+        //     { name: 'Refund Policy', href: '#' },
+        //     { name: 'Support', href: '#' },
+        //     { name: 'Community', href: '#' }
+        // ],
+        // Support: [
+        //     { name: 'Features', href: '#' },
+        //     { name: 'Integrations', href: '#' },
+        //     { name: 'Pricing', href: '#' },
+        //     { name: 'Changelog', href: '#' },
+        //     { name: 'Roadmap', href: '#' }
+        // ]
     }
 
     return (
@@ -56,7 +56,8 @@ export default function FooterSection() {
             {/* Footer Links */}
             <div className="border-t border-purple-900/50 mt-12">
                 <div className="max-w-7xl mx-auto px-4 py-12">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-y-8 lg:gap-12">
+                    <div className="lg:flex  justify-around">
+                        {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-y-8 lg:gap-12"> */}
                         {/* Logo and Description */}
                         <div className="lg:col-span-2">
                             <div className="flex items-center space-x-2 mb-6">
@@ -108,9 +109,9 @@ export default function FooterSection() {
                         ))}
                     </div>
 
-                    <div className="border-t border-purple-900/50 mt-12 pt-8 text-center">
-                        <p className="text-purple-200">Zelosify, LLC. All rights reserved.</p>
-                    </div>
+            <div className="border-t border-purple-900/50 mt-12 pt-8 text-center">
+                <p className="text-purple-200">Zelosify, LLC. All rights reserved.</p>
+            </div>
                 </div>
             </div>
 

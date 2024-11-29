@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Logo from '../../assets/logos/main-logo.png'
+import MobileMenu from '../UI/MobileMenu';
 
 const LandingNavbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -100,7 +101,7 @@ const LandingNavbar = () => {
                         </Link>
                     </div>
 
-    
+
                     {/* Mobile Menu Toggle */}
                     <div className="md:hidden -mr-2">
                         <button
@@ -145,50 +146,7 @@ const LandingNavbar = () => {
                     </div>
                 </div>
             </div>
-
-            {/* Mobile Menu */}
-            {isMenuOpen && (
-                <div className="md:hidden px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-[#1A1033]">
-                    <Link
-                        to="/"
-                        className={`${isActive('/') ? 'bg-purple-900/50' : 'hover:bg-purple-900/50'} block px-3 py-2 rounded-md text-base font-medium`}
-                        onClick={closeMenu}
-                    >
-                        Home
-                    </Link>
-                    <Link
-                        to="/features"
-                        className={`${isActive('/features') ? 'bg-purple-900/50' : 'hover:bg-purple-900/50'} block px-3 py-2 rounded-md text-base font-medium`}
-                        onClick={closeMenu}
-                    >
-                        Features
-                    </Link>
-                    <Link
-                        to="/pricing"
-                        className={`${isActive('/pricing') ? 'bg-purple-900/50' : 'hover:bg-purple-900/50'} block px-3 py-2 rounded-md text-base font-medium`}
-                        onClick={closeMenu}
-                    >
-                        Pricing
-                    </Link>
-                    <Link
-                        to="/contact"
-                        className={`${isActive('/contact') ? 'bg-purple-900/50' : 'hover:bg-purple-900/50'} block px-3 py-2 rounded-md text-base font-medium`}
-                        onClick={closeMenu}
-                    >
-                        Contact
-                    </Link>
-                    <div className="border-t border-purple-800 mt-4 pt-4">
-                        <Link
-                            to="/login"
-                            className={`${isActive('/login') ? 'bg-purple-900/50' : 'hover:bg-purple-900/50'} block px-3 py-2 rounded-md text-base font-medium`}
-                            onClick={closeMenu}
-                        >
-                            Sign in
-                        </Link>
-                       
-                    </div>
-                </div>
-            )}
+            <MobileMenu isMenuOpen={isMenuOpen} closeMenu={closeMenu} isActive={isActive} />
         </nav>
     );
 };
