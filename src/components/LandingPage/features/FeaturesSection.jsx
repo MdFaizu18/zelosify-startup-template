@@ -8,19 +8,19 @@ const features = [
     {
         title: "Centralized Contract Intelligence",
         description: "Aggregate, organize, and access all your contract data in one unified platform, turning unstructured information into actionable insights instantly.",
-        color: "#FF6B6B",
+        color: "#9334EA",
         image: featuresImg
     },
     {
         title: "Search with Confidence",
         description: "Get instant answers to your queries with highlighted citations, ensuring accuracy and reliability every time.",
-        color: "#4ECDC4",
+        color: "#9334EA",
         image: featuresImg
     },
     {
         title: "Insights That Drive Action",
         description: "Uncover deep insights from contracts using advanced generative AI, empowering smarter and faster decisions.",
-        color: "#FFB7D1",
+        color: "#9334EA",
         image: featuresImg
     },
     // {
