@@ -66,18 +66,19 @@
 .perspective-1000 {
   perspective: 1000px;
 }
+
 /* this is for scroll bar  */
 html {
   scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar {
-  width: 1rem;
+  width: .8rem;
 }
 
 ::-webkit-scrollbar-thumb {
   border-radius: 5px;
-  background: linear-gradient(to bottom, #681be4, #4709e6);
+  background: gray;
   transition: all 0.5s ease-in-out;
 }
 

@@ -11,7 +11,7 @@ export default function FeaturesCards() {
                 </svg>
             ),
             title: "Boost Productivity",
-            description: "Achieve the efficiency of a large team with few people by automating tedious vendor management tasks"
+            description: "Achieve the efficiency of a large team with few people by automating multiple vendor management tasks"
         },
         {
             icon: (

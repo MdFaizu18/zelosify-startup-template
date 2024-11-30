@@ -111,7 +111,7 @@ const MobileMenu = ({ isMenuOpen, closeMenu, isActive }) => {
                 </Link>
             </motion.div>
 
-            <motion.div
+            {/* <motion.div
                 variants={linkVariants}
                 transition={{ delay: 0.5 }}
                 className="mt-6 flex justify-center space-x-4"
@@ -149,7 +149,7 @@ const MobileMenu = ({ isMenuOpen, closeMenu, isActive }) => {
                         <path d="M12 0C8.74 0 7.253.003 6.048.022 4.911.043 3.968.23 3.148.479 2.33.728 1.72 1.07 1.073 1.907.413 2.757.233 3.82.217 5.259.217 7.689.217 9.99.604 11.768 2.303c1.37 1.25 2.039 3.315 2.039 5.073.001 1.628 1.728 2.904 2.92 4.091 2.296 2.596 3.728 6.533 5.293 10.12.36-.507.645-.951.86-1.355 3.395-6.14 4.216-7.054 4.648-7.735.305-.468.708-.875 1.236-1.176-.046-4.084-.002-7.999-2.435-8.285z" />
                     </svg>
                 </a>
-            </motion.div>
+            </motion.div> */}
         </motion.div>
     );
 };
