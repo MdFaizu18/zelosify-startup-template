@@ -67,7 +67,7 @@ export default function ContactPage() {
                     </div>
                 </div>
 
-                <div className="max-w-6xl mx-auto relative">
+                <div className="max-w-3xl mx-auto relative">
                     {/* Header */}
                     <div className="text-center mb-12">
 
@@ -83,12 +83,12 @@ export default function ContactPage() {
 
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-8 items-start">
-                        {/* Form Card */}
-                        <ContactForm />
 
-                        {/* Contact Information */}
-                        <div className="space-y-8 md:pl-8">
+                    {/* Form Card */}
+                    <ContactForm />
+
+                    {/* Contact Information */}
+                    {/* <div className="space-y-8 md:pl-8">
                             <div className="bg-[#1A1033] backdrop-blur-sm rounded-3xl p-8 space-y-8">
                                 <h3 className="text-2xl font-bold text-white mb-6">Contact Information</h3>
 
@@ -123,9 +123,9 @@ export default function ContactPage() {
                                         </a>
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
 
-                            {/* <div className="relative h-[300px] rounded-3xl overflow-hidden">
+                    {/* <div className="relative h-[300px] rounded-3xl overflow-hidden">
                                 <Image
                                     src="/placeholder.svg"
                                     alt="Contact illustration"
@@ -133,11 +133,11 @@ export default function ContactPage() {
                                     className="object-cover"
                                 />
                             </div> */}
-                        </div>
-                    </div>
                 </div>
             </div>
-           
+
+
+
 
             <FooterSection />
         </>
