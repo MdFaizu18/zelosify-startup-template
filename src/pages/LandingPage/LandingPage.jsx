@@ -17,7 +17,7 @@ export default function LandingPage() {
         <>
             <div>
                 <Helmet>
-                    <title>Zelosify - Empowering Innovation, One Step at a Time</title>
+                    <title>Zelosify - AI Contract Management Tool</title>
                 </Helmet>
             </div>
             <div className="min-h-screen bg-[#0F0720] text-white">

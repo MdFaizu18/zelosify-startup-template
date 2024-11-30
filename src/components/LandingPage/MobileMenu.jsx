@@ -70,7 +70,10 @@ const MobileMenu = ({ isMenuOpen, closeMenu, isActive }) => {
                     <button
                         className={` 'bg-purple-600 text-white' : 'text-purple-200 hover:bg-purple-900/30'
                             } block px-6 py-4 rounded-xl text-lg font-medium transition-colors duration-300 transform hover:scale-105`}
-                        onClick={handleScrollToFeatures}
+                        onClick={() => {
+                            handleScrollToFeatures();
+                            closeMenu();
+                        }}
                     >
                         Features
                     </button>
