@@ -75,7 +75,7 @@ const MobileMenu = ({ isMenuOpen, closeMenu, isActive }) => {
                         Features
                     </button>
                 </motion.div>
-                <motion.div variants={linkVariants}>
+                {/* <motion.div variants={linkVariants}>
                     <Link
                         to="/pricing"
                         className={`${isActive('/pricing') ? 'bg-purple-600 text-white' : 'text-purple-200 hover:bg-purple-900/30'
@@ -84,7 +84,7 @@ const MobileMenu = ({ isMenuOpen, closeMenu, isActive }) => {
                     >
                         Pricing
                     </Link>
-                </motion.div>
+                </motion.div> */}
                 <motion.div variants={linkVariants}>
                     <Link
                         to="/contact"

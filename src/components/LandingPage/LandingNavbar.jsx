@@ -85,13 +85,13 @@ const LandingNavbar = () => {
                         >
                             Features
                         </button>
-                        <RouterLink
+                        {/* <RouterLink
                             to="/pricing"
                             className={`${isActive('/pricing') ? 'bg-purple-900/50' : 'hover:bg-purple-900/50'} px-3 py-2 rounded-md text-sm font-medium`}
                             onClick={closeMenu}
                         >
                             Pricing
-                        </RouterLink>
+                        </RouterLink> */}
                         <RouterLink
                             to="/contact"
                             className={`${isActive('/contact') ? 'bg-purple-900/50' : 'hover:bg-purple-900/50'} px-3 py-2 rounded-md text-sm font-medium`}
