@@ -2,8 +2,8 @@ import React from 'react';
 
 export default function BetaFeatureAnnouncement() {
     return (
-        <div className="bg-[#0F0720]  lg:flex md:flex  items-center justify-center lg:px-32 lg:pt-32 sm:pt-32 sm:p-16 lg:space-x-16 sm:space-x-0">
-            <div className="text-center mb-12">
+        <div className="bg-[#0F0720]  lg:flex md:flex  items-center justify-center lg:px-32 lg:pt-32 pt-32 sm:p-16 lg:space-x-16 sm:space-x-0">
+            <div className="text-center mb-12 ">
 
                 <h2 className="text-5xl md:text-6xl font-bold mb-6">
                     <span className="bg-gradient-to-r from-white via-purple-200 to-purple-400 bg-clip-text text-transparent">

@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import Logo from '../../assets/logos/main-logo.png'
-import MobileMenu from '../UI/MobileMenu';
+import { Link as RouterLink, useLocation, useNavigate } from 'react-router-dom';
+import { Link as ScrollLink, animateScroll } from 'react-scroll'; // Import react-scroll Link
+import Logo from '../../assets/logos/main-logo.png';
+import MobileMenu from './MobileMenu';
 
 const LandingNavbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isTransparent, setIsTransparent] = useState(true);
     const location = useLocation(); // Get the current location
+    const navigate = useNavigate();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -36,49 +38,68 @@ const LandingNavbar = () => {
     // Helper to determine if a link is active
     const isActive = (path) => location.pathname === path;
 
+    // Function to handle scrolling to the "features" section
+    const handleScrollToFeatures = () => {
+        if (location.pathname !== '/') {
+            // Navigate to the home page first
+            navigate('/');
+            // Use a timeout to ensure the home page is rendered before triggering the scroll
+            setTimeout(() => {
+                animateScroll.scrollTo(document.querySelector('#features').offsetTop - 50, {
+                    duration: 500,
+                    smooth: true,
+                });
+            }, 200); // Adjust the timeout duration as needed
+        } else {
+            // If already on the home page, scroll to the "features" section directly
+            animateScroll.scrollTo(document.querySelector('#features').offsetTop - 50, {
+                duration: 500,
+                smooth: true,
+            });
+        }
+    };
+
     return (
         <nav
             className={`fixed w-full z-50 transition-all duration-300 ${isTransparent ? 'bg-transparent' : 'bg-[#1A1033]'} text-white`}
         >
             <div className="container mx-auto px-4 sm:px-16 lg:px-36">
-                <div className="flex items-center justify-between sm:justify-between  h-16">
+                <div className="flex items-center justify-between sm:justify-between h-16">
                     {/* Logo */}
-                    <Link to="/" className="flex items-center justify-center space-x-2 h-full ">
+                    <RouterLink to="/" className="flex items-center justify-center space-x-2 h-full">
                         <img src={Logo} alt="Zelosify Logo" className="h-8 w-auto sm:h-10" />
-                    </Link>
-
+                    </RouterLink>
 
                     {/* Desktop Menu */}
                     <div className="hidden md:flex items-center space-x-4">
-                        <Link
+                        <RouterLink
                             to="/"
                             className={`${isActive('/') ? 'bg-purple-900/50' : 'hover:bg-purple-900/50'} px-3 py-2 rounded-md text-sm font-medium`}
                             onClick={closeMenu}
                         >
                             Home
-                        </Link>
-                        <Link
-                            to="/features"
-                            className={`${isActive('/features') ? 'bg-purple-900/50' : 'hover:bg-purple-900/50'} px-3 py-2 rounded-md text-sm font-medium`}
-                            onClick={closeMenu}
+                        </RouterLink>
+                        <button
+                            className="cursor-pointer px-3 py-2 rounded-md text-sm font-medium hover:bg-purple-900/50"
+                            onClick={handleScrollToFeatures}
                         >
                             Features
-                        </Link>
-                        <Link
+                        </button>
+                        <RouterLink
                             to="/pricing"
                             className={`${isActive('/pricing') ? 'bg-purple-900/50' : 'hover:bg-purple-900/50'} px-3 py-2 rounded-md text-sm font-medium`}
                             onClick={closeMenu}
                         >
                             Pricing
-                        </Link>
-                        <Link
+                        </RouterLink>
+                        <RouterLink
                             to="/contact"
                             className={`${isActive('/contact') ? 'bg-purple-900/50' : 'hover:bg-purple-900/50'} px-3 py-2 rounded-md text-sm font-medium`}
                             onClick={closeMenu}
                         >
                             Contact
-                        </Link>
-                        <Link
+                        </RouterLink>
+                        <RouterLink
                             to="/login"
                             className={`${isActive('/login') ? 'bg-purple-600' : 'hover:bg-purple-700'} px-4 py-2 rounded-md text-sm font-medium flex items-center`}
                             onClick={closeMenu}
@@ -98,9 +119,8 @@ const LandingNavbar = () => {
                                     d="M9 5l7 7-7 7"
                                 ></path>
                             </svg>
-                        </Link>
+                        </RouterLink>
                     </div>
-
 
                     {/* Mobile Menu Toggle */}
                     <div className="md:hidden -mr-2">

@@ -1,6 +1,4 @@
 import { Helmet } from "react-helmet";
-import AnimatedDashboardPreview from "../../components/LandingPage/AnimatedDashboardPreview";
-import BlogSection from "../../components/LandingPage/BlogSection";
 import ContactForm from "../../components/LandingPage/ContactPage";
 import FeatureCards from "../../components/LandingPage/features/FeatureCards";
 import FeaturesSectionTwo from "../../components/LandingPage/features/FeaturesSection";
@@ -10,6 +8,9 @@ import LandingNavbar from "../../components/LandingPage/LandingNavbar";
 import PricingSection from "../../components/LandingPage/pricing/PricingSection";
 import TestimonialsSection from "../../components/LandingPage/TestimonialsSection";
 import FAQSection from "../../components/LandingPage/pricing/FAQSection";
+import VideoSection from "../../components/LandingPage/features/VideoSection";
+import AnimatedDashboardPreview from "../../components/LandingPage/AnimatedDashboardPreview";
+import FeaturesCards from "../../components/LandingPage/features/FeaturesCards";
 
 export default function LandingPage() {
     return (
@@ -40,15 +41,15 @@ export default function LandingPage() {
 
                     </button>
                     {/* Dashboard Preview */}
+                    {/* <VideoSection /> */}
                     <AnimatedDashboardPreview />
                 </main>
 
                 <FeaturesSectionTwo />
-                <FeatureCards />
-                {/* <PricingSection /> */}
-                {/* <TestimonialsSection /> */}
+               
+                <FeaturesCards />
                 <ContactForm />
-                <FAQSection/>
+                <FAQSection />
                 {/* <BlogSection /> */}
                 <FooterSection />
 

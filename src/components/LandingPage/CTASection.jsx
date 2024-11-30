@@ -90,19 +90,13 @@ export default function CTASection() {
                 <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
 
                 <div className="relative z-10">
-                    <div className="inline-flex items-center bg-purple-900/30 px-4 py-2 rounded-full mb-8">
-                        <span className="mr-2">✨</span>
-                        <span className="text-purple-200">Try our tool now</span>
-                    </div>
+                   
 
                     <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                         Start saving time and money from your contracts today
                     </h2>
 
-                    <p className="text-purple-200 max-w-2xl mx-auto mb-8">
-                        Our AI writing tool is designed to empower you with exceptional writing capabilities, making
-                        the writing process more efficient, accurate, and enjoyable.
-                    </p>
+                   
 
                     <button className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-lg transition-colors duration-300">
                         Join Private Beta

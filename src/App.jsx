@@ -3,13 +3,13 @@ import './App.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import LandingPage from './pages/LandingPage/LandingPage';
 import HomeOutlet from './pages/HomeOutlet';
-import LoginPage from './pages/authentication/LoginPage';
-import RegisterPage from './pages/authentication/RegisterPage';
 import NotFound from './pages/ErrorPage';
-import FeaturePage from './pages/Features/FeaturePage';
 import ScrollToTop from './components/UI/ScrollToTop';
 import PricingPage from './pages/Pricing/PricingPage';
 import ContactPage from './pages/contact/ContactPage';
+import LoginForm from './pages/authentication/LoginPage';
+import RegisterPage from './pages/authentication/RegisterPage';
+
 
 
 const router = createBrowserRouter([
@@ -24,15 +24,11 @@ const router = createBrowserRouter([
       },
       {
         path: 'login',
-        element: <LoginPage />,
+        element: <LoginForm />,
       },
       {
         path: 'register',
-        element: <RegisterPage />,
-      },
-      {
-        path: 'features',
-        element: <FeaturePage />,
+        element: <RegisterPage/>,
       },
       {
         path: 'pricing',

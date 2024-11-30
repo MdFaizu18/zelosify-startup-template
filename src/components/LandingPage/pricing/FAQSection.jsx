@@ -32,7 +32,7 @@ export default function FAQSection() {
     ]
 
     return (
-        <div className=" bg-[#0F0720] py-20 px-4">
+        <div className=" bg-[#0F0725] py-20 px-4">
             <div className="max-w-3xl mx-auto">
                 {/* Header */}
                 <div className="text-center mb-16">

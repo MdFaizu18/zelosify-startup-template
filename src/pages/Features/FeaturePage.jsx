@@ -1,6 +1,6 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import AboutSectionOne from '../../components/LandingPage/features/FeatureSectionOne'
+import AboutSectionOne from '../../components/LandingPage/features/VideoSection'
 import FooterSection from '../../components/LandingPage/FooterSection'
 import LandingNavbar from '../../components/LandingPage/LandingNavbar'
 import FeaturesSection from '../../components/LandingPage/features/FeaturesSection'
