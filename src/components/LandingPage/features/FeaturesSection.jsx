@@ -7,7 +7,7 @@ import featuresImg from '../../../assets/images/features.webp'
 const features = [
     {
         title: "Centralized Contract Intelligence",
-        description: "Aggregate, organize, and access all your contract data in one unified platform, turning unstructured information into actionable insights instantly.",
+        description: "Aggregate and access all your contract data in one unified platform, turning unstructured data into actionable insights.",
         image: featuresImg
     },
     {
@@ -67,10 +67,10 @@ export default function FeaturesSectionTwo() {
                     >
                         <h2 className="text-5xl md:text-6xl font-bold mb-6">
                             <span className="bg-gradient-to-r from-white via-purple-200 to-purple-400 bg-clip-text text-transparent">
-                                Explore Our Features
+                                Your New Vendor Management Workspace
                             </span>
                         </h2>
-                        <p className="text-purple-200/80 max-w-3xl mx-auto text-lg">
+                        <p className="text-purple-200/80 max-w-3xl mx-auto text-lg sm:text-2xl">
                             Discover how our platform can transform your workflow
                         </p>
                     </motion.div>
@@ -93,9 +93,9 @@ export default function FeaturesSectionTwo() {
                                     whileInView={{ opacity: 1, x: 0 }}
                                     transition={{ duration: 0.5 }}
                                 >
-                                    <div className="inline-flex items-center bg-purple-900/30 px-4 py-2 rounded-full">
+                                    {/* <div className="inline-flex items-center bg-purple-900/30 px-4 py-2 rounded-full">
                                         <span className="text-purple-300">Feature {index + 1}</span>
-                                    </div>
+                                    </div> */}
                                     <h3 className="text-3xl md:text-4xl font-bold text-white">
                                         {feature.title}
                                     </h3>

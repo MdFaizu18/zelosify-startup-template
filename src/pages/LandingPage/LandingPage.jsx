@@ -33,7 +33,7 @@ export default function LandingPage() {
                     >
                         Every Contract, Clause and vendor Matters
                     </h1>
-                    <p className="text-gray-400 text-lg md:text-lg max-w-3xl mx-auto mb-12">
+                    <p className="text-gray-400 text-lg md:text-2xl max-w-3xl mx-auto mb-12">
                         Zelosify makes it Effortless to manage contracts, unlock instant insights, and boost your bottom line.  </p>
 
                     <button className="bg-purple-600 hover:bg-purple-700 text-lg px-6 py-2 rounded-lg font-medium">
@@ -53,15 +53,6 @@ export default function LandingPage() {
                 {/* <BlogSection /> */}
                 <FooterSection />
 
-                {/* Scroll to top button */}
-                <button
-                    className="fixed bottom-8 right-8 bg-purple-600 p-3 rounded-lg hover:bg-purple-700"
-                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                >
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
-                    </svg>
-                </button>
 
             </div>
         </>

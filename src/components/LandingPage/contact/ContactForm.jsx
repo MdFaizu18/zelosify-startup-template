@@ -200,7 +200,7 @@ const ContactForm = () => {
                             }`}
                         disabled={progress !== 100}
                     >
-                        Reach Us Out
+                        Get Started
                     </button>
                 </form>
             </div>

@@ -14,11 +14,11 @@ export default function ContactSection() {
                 <div className="text-center mb-12">
                     <h2 className="text-4xl md:text-5xl font-bold mb-6">
                         <span className="bg-gradient-to-r from-white via-purple-200 to-purple-400 bg-clip-text text-transparent">
-                            Let's Book a Demo
+                            Schedule Demo
                         </span>
                     </h2>
                     <p className="text-purple-200/80 max-w-2xl mx-auto text-lg">
-                        See how our AI Tool can help achieve your business goals.
+                        To Maximize Contract Value - Book Your Zelosify Demo Now!
                     </p>
                 </div>
 
