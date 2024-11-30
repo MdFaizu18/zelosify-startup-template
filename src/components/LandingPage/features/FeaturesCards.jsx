@@ -10,8 +10,8 @@ export default function FeaturesCards() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
             ),
-            title: "Save time",
-            description: "Give your team back dozens of hours each week to focus on what actually drives value for your business"
+            title: "Boost Productivity",
+            description: "Achieve the efficiency of a large team with few people by automating tedious vendor management tasks"
         },
         {
             icon: (
@@ -19,8 +19,8 @@ export default function FeaturesCards() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
             ),
-            title: "Save money",
-            description: "Unlock tens of thousands of dollars in savings opportunities through smarter purchasing decisions"
+            title: "Optimize Costs",
+            description: "Reduce contract spend effectively by identifying opportunities for cost-saving and avoiding redundant expenses."
         },
         {
             icon: (
@@ -28,8 +28,8 @@ export default function FeaturesCards() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
             ),
-            title: "Gain visibility",
-            description: "Find the answers you need instantly, with everything in one place, always up to date"
+            title: "Enhance Insights",
+            description: "Get real-time visibility into vendor performance and contract analytics, empowering smarter decisions."
         }
     ];
 
