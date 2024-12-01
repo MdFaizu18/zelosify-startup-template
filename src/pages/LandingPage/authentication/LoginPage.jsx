@@ -1,7 +1,7 @@
 'use client'
 import { Helmet } from "react-helmet";
-import FooterSection from "../../components/LandingPage/FooterSection";
-import LandingNavbar from "../../components/LandingPage/LandingNavbar";
+import FooterSection from "../../../components/LandingPage/FooterSection";
+import LandingNavbar from "../../../components/LandingPage/LandingNavbar";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 

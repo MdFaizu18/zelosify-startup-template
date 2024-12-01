@@ -1,14 +1,13 @@
 import React, { useEffect } from 'react';
 import './App.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import PrivacyPage from './pages/LandingPage/privacy/PrivacyPage';
 import LandingPage from './pages/LandingPage/LandingPage';
-import HomeOutlet from './pages/HomeOutlet';
-import NotFound from './pages/ErrorPage';
-import ScrollToTop from './components/UI/ScrollToTop';
-import PricingPage from './pages/Pricing/PricingPage';
-import ContactPage from './pages/contact/ContactPage';
-import LoginForm from './pages/authentication/LoginPage';
-import RegisterPage from './pages/authentication/RegisterPage';
+import ContactPage from './pages/LandingPage/contact/ContactPage';
+import LoginForm from './pages/LandingPage/authentication/LoginPage';
+import RegisterPage from './pages/LandingPage/authentication/RegisterPage';
+import NotFound from './pages/LandingPage/ErrorPage';
+import HomeOutlet from './pages/LandingPage/HomeOutlet'
 
 
 
@@ -37,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: 'contact',
         element: <ContactPage />,
+      },
+      {
+        path: 'privacy',
+        element: <PrivacyPage />,
       },
     ],
   },
@@ -78,10 +81,11 @@ const App = () => {
   }, []);
 
   return (
-    <RouterProvider router={router}>
-      <ScrollToTop /> {/* Make sure ScrollToTop is wrapped inside RouterProvider */}
-    </RouterProvider>
+    <>
+    <RouterProvider router={router}/>
+    </>
   );
+
 };
 
 export default App;

@@ -1,10 +1,10 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import AboutSectionOne from '../../components/LandingPage/features/VideoSection'
-import FooterSection from '../../components/LandingPage/FooterSection'
-import LandingNavbar from '../../components/LandingPage/LandingNavbar'
-import FeaturesSection from '../../components/LandingPage/features/FeaturesSection'
-import PageBanner from '../../components/LandingPage/PageBanner'
+import AboutSectionOne from '../../../components/LandingPage/features/VideoSection'
+import FooterSection from '../../../components/LandingPage/FooterSection'
+import LandingNavbar from '../../../components/LandingPage/LandingNavbar'
+import FeaturesSection from '../../../components/LandingPage/features/FeaturesSection'
+import PageBanner from '../../../components/LandingPage/PageBanner'
 
 const FeaturePage = () => {
     return (
