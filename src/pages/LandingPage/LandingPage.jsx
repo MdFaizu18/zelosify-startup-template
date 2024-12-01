@@ -3,7 +3,7 @@ import ContactForm from "../../components/LandingPage/ContactPage";
 import FeatureCards from "../../components/LandingPage/features/FeatureCards";
 import FeaturesSectionTwo from "../../components/LandingPage/features/FeaturesSection";
 
-import FooterSection from "../../components/LandingPage/FooterSection";
+import FooterSection from "../../components/LandingPage/footer/FooterSection";
 import LandingNavbar from "../../components/LandingPage/LandingNavbar";
 import PricingSection from "../../components/LandingPage/pricing/PricingSection";
 import TestimonialsSection from "../../components/LandingPage/TestimonialsSection";
@@ -46,7 +46,7 @@ export default function LandingPage() {
                 </main>
 
                 <FeaturesSectionTwo />
-               
+
                 <FeaturesCards />
                 <ContactForm />
                 <FAQSection />

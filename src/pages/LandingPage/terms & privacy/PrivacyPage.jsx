@@ -1,7 +1,7 @@
 import React from 'react'
 import LandingNavbar from '../../../components/LandingPage/LandingNavbar'
-import FooterSection from '../../../components/LandingPage/FooterSection'
-import PrivacyPolicy from '../../../components/LandingPage/privacy/PrivacySection'
+import FooterSection from '../../../components/LandingPage/footer/FooterSection'
+import PrivacyPolicy from '../../../components/LandingPage/footer/PrivacySection'
 
 const PrivacyPage = () => {
     return (
@@ -10,10 +10,10 @@ const PrivacyPage = () => {
                 <LandingNavbar />
             </div>
             <div>
-                <PrivacyPolicy/>
+                <PrivacyPolicy />
             </div>
             <div>
-                <FooterSection/>
+                <FooterSection />
             </div>
         </>
     )

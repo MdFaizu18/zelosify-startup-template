@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import LandingNavbar from '../../../components/LandingPage/LandingNavbar';
-import FooterSection from '../../../components/LandingPage/FooterSection';
+import FooterSection from '../../../components/LandingPage/footer/FooterSection';
 import { Sparkles, MapPin, Mail, Phone, Facebook, Twitter, Linkedin } from 'lucide-react';
 import ContactForm from '../../../components/LandingPage/contact/ContactForm';
 

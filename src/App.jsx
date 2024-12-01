@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react';
 import './App.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import PrivacyPage from './pages/LandingPage/privacy/PrivacyPage';
+import PrivacyPage from './pages/LandingPage/terms & privacy/PrivacyPage';
 import LandingPage from './pages/LandingPage/LandingPage';
 import ContactPage from './pages/LandingPage/contact/ContactPage';
 import LoginForm from './pages/LandingPage/authentication/LoginPage';
 import RegisterPage from './pages/LandingPage/authentication/RegisterPage';
 import NotFound from './pages/LandingPage/ErrorPage';
 import HomeOutlet from './pages/LandingPage/HomeOutlet'
-
+import TermsPage from './pages/LandingPage/terms & privacy/TermsPage';
 
 
 const router = createBrowserRouter([
@@ -27,7 +27,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'register',
-        element: <RegisterPage/>,
+        element: <RegisterPage />,
       },
       // {
       //   path: 'pricing',
@@ -40,6 +40,10 @@ const router = createBrowserRouter([
       {
         path: 'privacy',
         element: <PrivacyPage />,
+      },
+      {
+        path: 'terms',
+        element: <TermsPage />,
       },
     ],
   },
@@ -82,7 +86,7 @@ const App = () => {
 
   return (
     <>
-    <RouterProvider router={router}/>
+      <RouterProvider router={router} />
     </>
   );
 

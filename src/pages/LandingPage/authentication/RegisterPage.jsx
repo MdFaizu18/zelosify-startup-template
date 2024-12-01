@@ -1,6 +1,6 @@
 'use client'
 import { Helmet } from "react-helmet";
-import FooterSection from "../../../components/LandingPage/FooterSection";
+import FooterSection from "../../../components/LandingPage/footer/FooterSection";
 import LandingNavbar from "../../../components/LandingPage/LandingNavbar";
 import { Link } from "react-router-dom";
 import { useState } from "react";
@@ -102,7 +102,7 @@ export default function RegisterPage() {
 
                                 <div className="mb-4">
                                     <label htmlFor="password" className="block text-sm font-medium text-purple-200 mb-2">
-                                       Password
+                                        Password
                                     </label>
                                     <input
                                         id="password"
@@ -120,7 +120,7 @@ export default function RegisterPage() {
                                             } text-white placeholder-purple-300/50 focus:outline-none focus:ring-2 ${passwordError ? "focus:ring-red-600" : "focus:ring-purple-600"
                                             }`}
                                         placeholder="Enter your password"
-                                    />                            
+                                    />
                                     {passwordError && (
                                         <p className="text-red-600 text-sm mt-1">{passwordError}</p>
                                     )}

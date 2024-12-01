@@ -354,7 +354,9 @@ export default function PrivacyPolicy() {
                     <p className="text-purple-200 mb-4">
                         To request to review, update, or delete your personal information, please fill out and submit
                     </p>
-                    <Link to='/datacorrection' className="text-purple-400">www.zelosify.com/datacorrection.</Link>
+                      <a href="http://www.zelosify.com/datacorrection" className="text-purple-400 hover:text-white transition-colors duration-300">
+                                {" "} www.zelosify.com/datacorrection
+                            </a>.
                 </div>
                 <div id="contact" className="bg-[#1A1033] rounded-xl p-8 mt-12">
                     <h2 className="text-2xl font-bold text-white mb-4">Contact Us</h2>

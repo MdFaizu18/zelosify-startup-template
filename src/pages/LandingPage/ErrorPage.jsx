@@ -4,7 +4,7 @@ import React, { useEffect, useRef } from 'react'
 import { Helmet } from 'react-helmet'
 import { Link } from 'react-router-dom'
 import LandingNavbar from '../../components/LandingPage/LandingNavbar'
-import FooterSection from '../../components/LandingPage/FooterSection'
+import FooterSection from '../../components/LandingPage/footer/FooterSection'
 
 const NotFound = () => {
     return (

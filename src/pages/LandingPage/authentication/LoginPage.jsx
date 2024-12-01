@@ -1,6 +1,6 @@
 'use client'
 import { Helmet } from "react-helmet";
-import FooterSection from "../../../components/LandingPage/FooterSection";
+import FooterSection from "../../../components/LandingPage/footer/FooterSection";
 import LandingNavbar from "../../../components/LandingPage/LandingNavbar";
 import { Link } from "react-router-dom";
 import { useState } from "react";
@@ -63,8 +63,8 @@ export default function LoginForm() {
                                             autoComplete="email"
                                             required
                                             className={`w-full px-4 py-2 rounded-md bg-[#12071A] border ${emailError
-                                                    ? "border-red-600"
-                                                    : "border-purple-900/50"
+                                                ? "border-red-600"
+                                                : "border-purple-900/50"
                                                 } text-white placeholder-purple-300/50 focus:outline-none focus:ring-2 ${emailError
                                                     ? "focus:ring-red-600"
                                                     : "focus:ring-purple-600"

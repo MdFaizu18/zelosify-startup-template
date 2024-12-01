@@ -1,5 +1,5 @@
-import CTASection from "./CTASection"
-import Logo from '../../assets/logos/main-logo.png'
+import CTASection from "../CTASection"
+import Logo from '../../../assets/logos/main-logo.png'
 import { Link } from "react-router-dom"
 
 
@@ -12,9 +12,9 @@ export default function FooterSection() {
         //     { name: 'Changelog', href: '#' },
         // ],
         Company: [
-            { name: 'About us', href: '#' },
+
             { name: 'Privacy Policy', to: '/privacy' },
-            { name: 'Terms of Use', href: '#' }
+            { name: 'Terms of Use', to: '/terms' }
         ],
         // SocialMedia: [
         //     { name: 'LinkedIn', href: '#' },
@@ -103,7 +103,7 @@ export default function FooterSection() {
                         ))}
                     </div>
 
-          
+
                 </div>
             </div>
 
