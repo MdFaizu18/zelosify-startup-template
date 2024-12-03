@@ -89,76 +89,37 @@ export default function FeaturesSection() {
                         className="min-h-[75vh] flex items-center justify-center py-8 md:py-16"
                     >
                         <div className="max-w-7xl mx-auto px-4 sm:px-2 md:px-4 w-full">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                                {index % 2 === 0 ? (
-                                    <>
-                                        {/* Text Left, Image Right */}
-                                        <motion.div
-                                            className="space-y-6"
-                                            initial={{ opacity: 0, x: -50 }}
-                                            whileInView={{ opacity: 1, x: 0 }}
-                                            transition={{ duration: 0.5 }}
-                                        >
-                                            <h3 className="text-3xl md:text-4xl font-bold text-white">
-                                                {feature.title}
-                                            </h3>
-                                            <p className="text-purple-200/80 text-lg">
-                                                {feature.description}
-                                            </p>
-                                        </motion.div>
-                                        <motion.div
-                                            initial={{ opacity: 0, x: 50 }}
-                                            whileInView={{ opacity: 1, x: 0 }}
-                                            transition={{ duration: 0.5 }}
-                                            className="relative"
-                                        >
-                                            <div className="relative rounded-lg overflow-hidden">
-                                                <img
-                                                    src={feature.image}
-                                                    alt={feature.title}
-                                                    height={feature.imageHeight}
-                                                    width={feature.imageWidth}
-                                                    className="rounded-lg object-cover"
-                                                />
-                                                <div className="absolute inset-0 bg-purple-600/10"></div>
-                                            </div>
-                                        </motion.div>
-                                    </>
-                                ) : (
-                                    <>
-                                        {/* Image Left, Text Right */}
-                                        <motion.div
-                                            initial={{ opacity: 0, x: -50 }}
-                                            whileInView={{ opacity: 1, x: 0 }}
-                                            transition={{ duration: 0.5 }}
-                                            className="relative"
-                                        >
-                                            <div className="relative rounded-lg overflow-hidden">
-                                                <img
-                                                    src={feature.image}
-                                                    alt={feature.title}
-                                                    height={feature.imageHeight}
-                                                    width={feature.imageWidth}
-                                                    className="rounded-lg object-cover"
-                                                />
-                                                <div className="absolute inset-0 bg-purple-600/10"></div>
-                                            </div>
-                                        </motion.div>
-                                        <motion.div
-                                            className="space-y-6"
-                                            initial={{ opacity: 0, x: 50 }}
-                                            whileInView={{ opacity: 1, x: 0 }}
-                                            transition={{ duration: 0.5 }}
-                                        >
-                                            <h3 className="text-3xl md:text-4xl font-bold text-white">
-                                                {feature.title}
-                                            </h3>
-                                            <p className="text-purple-200/80 text-lg">
-                                                {feature.description}
-                                            </p>
-                                        </motion.div>
-                                    </>
-                                )}
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center md:flex-row-reverse">
+                                <motion.div
+                                    initial={{ opacity: 0, x: -50 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    transition={{ duration: 0.5 }}
+                                    className="relative order-2 md:order-none"
+                                >
+                                    <div className="relative rounded-lg overflow-hidden">
+                                        <img
+                                            src={feature.image}
+                                            alt={feature.title}
+                                            height={feature.imageHeight}
+                                            width={feature.imageWidth}
+                                            className="rounded-lg object-cover"
+                                        />
+                                        <div className="absolute inset-0 bg-purple-600/10"></div>
+                                    </div>
+                                </motion.div>
+                                <motion.div
+                                    className="space-y-6 order-1 md:order-none"
+                                    initial={{ opacity: 0, x: 50 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    transition={{ duration: 0.5 }}
+                                >
+                                    <h3 className="text-3xl md:text-4xl font-bold text-white">
+                                        {feature.title}
+                                    </h3>
+                                    <p className="text-purple-200/80 text-lg">
+                                        {feature.description}
+                                    </p>
+                                </motion.div>
                             </div>
                         </div>
                     </div>
