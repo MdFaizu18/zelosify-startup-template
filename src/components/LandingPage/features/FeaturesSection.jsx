@@ -1,36 +1,42 @@
 'use client'
 
 import React, { useRef, useEffect, useState } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
-import featuresImg from '../../../assets/images/features.webp'
+import { motion } from 'framer-motion'
+import DashboardImg from '../../../assets/images/Dashboard.png'
+import InsightImg from '../../../assets/images/insight.png';
+import SearchImg from '../../../assets/images/search.png';
 
 const features = [
     {
         title: "Centralized Contract Intelligence",
         description: "Aggregate and access all your contract data in one unified platform, turning unstructured data into actionable insights.",
-        image: featuresImg
+        image: DashboardImg,
+        imageHeight: 450,
+        imageWidth: 800,
     },
     {
         title: "Search with Confidence",
         description: "Get instant answers to your queries with highlighted citations, ensuring accuracy and reliability every time.",
-        image: featuresImg
+        image: SearchImg,
+        imageHeight: 400,
+        imageWidth: 800,
     },
     {
         title: "Insights That Drive Action",
         description: "Uncover deep insights from contracts using advanced generative AI, empowering smarter and faster decisions.",
-        image: featuresImg
+        image: InsightImg,
+        imageHeight: 450,
+        imageWidth: 800,
     },
 ]
 
-export default function FeaturesSectionTwo() {
+export default function FeaturesSection() {
     const containerRef = useRef(null)
     const [activeFeature, setActiveFeature] = useState(0)
 
-    // Create refs for each feature section
     const featureRefs = useRef([])
 
     useEffect(() => {
-        // Set up Intersection Observer
         const observerOptions = {
             root: null,
             rootMargin: "0px",
@@ -46,7 +52,6 @@ export default function FeaturesSectionTwo() {
             })
         }, observerOptions)
 
-        // Observe all feature sections
         featureRefs.current.forEach(ref => {
             if (ref) observer.observe(ref)
         })
@@ -56,16 +61,15 @@ export default function FeaturesSectionTwo() {
 
     return (
         <section id="features" className="bg-[#0F0725] relative overflow-x-hidden">
-            {/* Sticky header */}
             <div className="bg-[#0F0725] pt-16">
-                <div className="max-w-7xl mx-auto px-4 sm:px-2 md:px-4">
+                <div className="max-w-7xl mx-auto px-2 sm:px-2 md:px-4">
                     <motion.div
                         className="text-center"
                         initial={{ opacity: 0, y: -50 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
                     >
-                        <h2 className="text-5xl md:text-6xl font-bold mb-6">
+                        <h2 className="text-4xl md:text-6xl font-bold mb-6">
                             <span className="bg-gradient-to-r from-white via-purple-200 to-purple-400 bg-clip-text text-transparent">
                                 Your New Vendor Management Workspace
                             </span>
@@ -77,7 +81,6 @@ export default function FeaturesSectionTwo() {
                 </div>
             </div>
 
-            {/* Features container */}
             <div ref={containerRef} className="relative">
                 {features.map((feature, index) => (
                     <div
@@ -87,45 +90,80 @@ export default function FeaturesSectionTwo() {
                     >
                         <div className="max-w-7xl mx-auto px-4 sm:px-2 md:px-4 w-full">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                                <motion.div
-                                    className="space-y-6"
-                                    initial={{ opacity: 0, x: -50 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    transition={{ duration: 0.5 }}
-                                >
-                                    {/* <div className="inline-flex items-center bg-purple-900/30 px-4 py-2 rounded-full">
-                                        <span className="text-purple-300">Feature {index + 1}</span>
-                                    </div> */}
-                                    <h3 className="text-3xl md:text-4xl font-bold text-white">
-                                        {feature.title}
-                                    </h3>
-                                    <p className="text-purple-200/80 text-lg">
-                                        {feature.description}
-                                    </p>
-                                </motion.div>
-
-                                <motion.div
-                                    initial={{ opacity: 0, x: 50 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    transition={{ duration: 0.5 }}
-                                    className="relative"
-                                >
-                                    <div className="relative rounded-lg overflow-hidden">
-                                        <img
-                                            src={feature.image}
-                                            alt={feature.title}
-                                            className="w-full h-[250px] md:h-[450px] rounded-lg object-cover"
-                                        />
-                                        <div className="absolute inset-0 bg-purple-600/10"></div>
-                                    </div>
-                                </motion.div>
+                                {index % 2 === 0 ? (
+                                    <>
+                                        {/* Text Left, Image Right */}
+                                        <motion.div
+                                            className="space-y-6"
+                                            initial={{ opacity: 0, x: -50 }}
+                                            whileInView={{ opacity: 1, x: 0 }}
+                                            transition={{ duration: 0.5 }}
+                                        >
+                                            <h3 className="text-3xl md:text-4xl font-bold text-white">
+                                                {feature.title}
+                                            </h3>
+                                            <p className="text-purple-200/80 text-lg">
+                                                {feature.description}
+                                            </p>
+                                        </motion.div>
+                                        <motion.div
+                                            initial={{ opacity: 0, x: 50 }}
+                                            whileInView={{ opacity: 1, x: 0 }}
+                                            transition={{ duration: 0.5 }}
+                                            className="relative"
+                                        >
+                                            <div className="relative rounded-lg overflow-hidden">
+                                                <img
+                                                    src={feature.image}
+                                                    alt={feature.title}
+                                                    height={feature.imageHeight}
+                                                    width={feature.imageWidth}
+                                                    className="rounded-lg object-cover"
+                                                />
+                                                <div className="absolute inset-0 bg-purple-600/10"></div>
+                                            </div>
+                                        </motion.div>
+                                    </>
+                                ) : (
+                                    <>
+                                        {/* Image Left, Text Right */}
+                                        <motion.div
+                                            initial={{ opacity: 0, x: -50 }}
+                                            whileInView={{ opacity: 1, x: 0 }}
+                                            transition={{ duration: 0.5 }}
+                                            className="relative"
+                                        >
+                                            <div className="relative rounded-lg overflow-hidden">
+                                                <img
+                                                    src={feature.image}
+                                                    alt={feature.title}
+                                                    height={feature.imageHeight}
+                                                    width={feature.imageWidth}
+                                                    className="rounded-lg object-cover"
+                                                />
+                                                <div className="absolute inset-0 bg-purple-600/10"></div>
+                                            </div>
+                                        </motion.div>
+                                        <motion.div
+                                            className="space-y-6"
+                                            initial={{ opacity: 0, x: 50 }}
+                                            whileInView={{ opacity: 1, x: 0 }}
+                                            transition={{ duration: 0.5 }}
+                                        >
+                                            <h3 className="text-3xl md:text-4xl font-bold text-white">
+                                                {feature.title}
+                                            </h3>
+                                            <p className="text-purple-200/80 text-lg">
+                                                {feature.description}
+                                            </p>
+                                        </motion.div>
+                                    </>
+                                )}
                             </div>
                         </div>
                     </div>
                 ))}
             </div>
         </section>
-
     )
 }
-

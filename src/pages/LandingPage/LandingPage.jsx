@@ -1,7 +1,5 @@
 import { Helmet } from "react-helmet";
 import ContactForm from "../../components/LandingPage/ContactPage";
-import FeatureCards from "../../components/LandingPage/features/FeatureCards";
-import FeaturesSectionTwo from "../../components/LandingPage/features/FeaturesSection";
 
 import FooterSection from "../../components/LandingPage/footer/FooterSection";
 import LandingNavbar from "../../components/LandingPage/LandingNavbar";
@@ -11,6 +9,7 @@ import FAQSection from "../../components/LandingPage/pricing/FAQSection";
 import VideoSection from "../../components/LandingPage/features/VideoSection";
 import AnimatedDashboardPreview from "../../components/LandingPage/AnimatedDashboardPreview";
 import FeaturesCards from "../../components/LandingPage/features/FeaturesCards";
+import FeaturesSection from "../../components/LandingPage/features/FeaturesSection";
 
 export default function LandingPage() {
     return (
@@ -31,7 +30,7 @@ export default function LandingPage() {
                         bg-gradient-to-r from-purple-300 via-purple-100 to-purple-300 bg-clip-text text-transparent"
                         style={{ lineHeight: '1.2' }}
                     >
-                        Every Contract, Clause and vendor Matters
+                        Maximize the value of every penny spent on your contracts
                     </h1>
                     <p className="text-gray-400 text-lg md:text-2xl max-w-3xl mx-auto mb-12">
                         Zelosify makes it Effortless to manage contracts, unlock instant insights, and boost your bottom line.  </p>
@@ -45,7 +44,7 @@ export default function LandingPage() {
                     <AnimatedDashboardPreview />
                 </main>
 
-                <FeaturesSectionTwo />
+                <FeaturesSection />
 
                 <FeaturesCards />
                 <ContactForm />
