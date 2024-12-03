@@ -1,21 +1,14 @@
 import React from "react";
-import videoFile from "../../assets/video/typetext.mp4";
+import videoFile from "../../assets/video/text.mp4";
 
 const VideoDelivery = () => {
     return (
-        <div className="flex justify-center items-center px-12  bg-[#0F071F] overflow-hidden">
+        <div className="flex justify-center items-center bg-[#0F071F] overflow-hidden pt-24 sm:pt-12  px-0 sm:px-12">
             <video
-                className="rounded-lg shadow-lg object-cover"
+                className="sm:w-[60%] w-[100%]  object-contain"
                 loop
                 autoPlay
                 muted
-                style={{
-                    width: "100%", // Makes the video responsive
-                    height: "100%",
-                    objectFit: "cover", // Ensures the video fills the container
-                    objectPosition: "center -50px", // Crops from the top by 50px
-                    clipPath: "inset(240px 0px 360px 0px)", // Crops top and bottom by 100px
-                }}
             >
                 <source src={videoFile} type="video/mp4" />
                 Your browser does not support the video tag.
@@ -25,4 +18,3 @@ const VideoDelivery = () => {
 };
 
 export default VideoDelivery;
-
