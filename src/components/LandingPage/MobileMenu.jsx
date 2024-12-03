@@ -59,7 +59,7 @@ const MobileMenu = ({ isMenuOpen, closeMenu, isActive }) => {
                 <motion.div variants={linkVariants}>
                     <Link
                         to="/"
-                        className={`${isActive('/') ? 'bg-purple-600 text-white' : 'text-purple-200 hover:bg-purple-900/30'
+                        className={`${isActive('/') ? 'bg-purple-600 text-white' : 'text-white hover:bg-purple-900/30'
                             } block px-6 py-4 rounded-xl text-lg font-medium transition-colors duration-300 transform hover:scale-105`}
                         onClick={closeMenu}
                     >
@@ -91,7 +91,7 @@ const MobileMenu = ({ isMenuOpen, closeMenu, isActive }) => {
                 <motion.div variants={linkVariants}>
                     <Link
                         to="/contact"
-                        className={`${isActive('/contact') ? 'bg-purple-600 text-white' : 'text-purple-200 hover:bg-purple-900/30'
+                        className={`${isActive('/contact') ? 'bg-purple-600 text-white' : 'text-white hover:bg-purple-900/30'
                             } block px-6 py-4 rounded-xl text-lg font-medium transition-colors duration-300 transform hover:scale-105`}
                         onClick={closeMenu}
                     >
