@@ -1,89 +1,115 @@
-'use client';
+'use client'
 
-import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
-import { Search, Send } from 'lucide-react';
+import React, { useState, useEffect } from "react"
 
-const MacWindow = ({ children }) => (
-    <div className="w-full mx-auto bg-[#1A1033]/90 backdrop-blur-xl rounded-2xl shadow-2xl overflow-hidden border border-purple-500/20 sm:max-w-4xl">
-        <div className="h-12 bg-[#2A1052]/80 border-b border-purple-500/20 flex items-center px-4 gap-2">
-            <div className="flex gap-2">
-                <div className="w-3 h-3 rounded-full bg-red-400" />
-                <div className="w-3 h-3 rounded-full bg-yellow-400" />
-                <div className="w-3 h-3 rounded-full bg-green-400" />
-            </div>
-        </div>
-        <div className="p-4 mx-0 sm:p-8 sm:mx-12">
-            {children}
-        </div>
-    </div>
-);
-
-const TypingAnimation = () => {
+const MacbookSearchBar = () => {
     const texts = [
         "What is SLA performance of vendors for IT support?",
         "How can I reduce the cost of contracts with ABC vendor?",
         "Which clauses in app support contracts cut costs?",
-        "Analyze vendor performance trends over the last quarter.",
-        "Identify top-performing vendors based on SLA metrics.",
-    ];
+    ]
 
-    const [displayText, setDisplayText] = useState("");
-    const [index, setIndex] = useState(0);
-    const [charIndex, setCharIndex] = useState(0);
-    const [isDeleting, setIsDeleting] = useState(false);
+    const typingSpeed = 30
+    const pauseDuration = 1000
+    const backspaceSpeed = 30
 
-    const typingSpeed = 50;
-    const pauseDuration = 2000;
+    const [currentText, setCurrentText] = useState("")
+    const [index, setIndex] = useState(0)
+    const [charIndex, setCharIndex] = useState(0)
+    const [isDeleting, setIsDeleting] = useState(false)
 
     useEffect(() => {
         const handleTyping = () => {
             if (!isDeleting && charIndex < texts[index].length) {
-                setDisplayText((prev) => prev + texts[index][charIndex]);
-                setCharIndex((prev) => prev + 1);
+                setCurrentText((prev) => prev + texts[index][charIndex])
+                setCharIndex((prev) => prev + 1)
             } else if (isDeleting && charIndex > 0) {
-                setDisplayText((prev) => prev.slice(0, -1));
-                setCharIndex((prev) => prev - 1);
+                setCurrentText((prev) => prev.slice(0, -1))
+                setCharIndex((prev) => prev - 1)
             } else if (!isDeleting && charIndex === texts[index].length) {
-                setTimeout(() => setIsDeleting(true), pauseDuration);
+                setTimeout(() => setIsDeleting(true), pauseDuration)
             } else if (isDeleting && charIndex === 0) {
-                setIsDeleting(false);
-                setIndex((prev) => (prev + 1) % texts.length);
+                setIsDeleting(false)
+                setIndex((prev) => (prev + 1) % texts.length)
             }
-        };
+        }
 
-        const timeout = setTimeout(handleTyping, isDeleting ? typingSpeed / 2 : typingSpeed);
-        return () => clearTimeout(timeout);
-    }, [charIndex, isDeleting, index, texts]);
+        const timer = setTimeout(
+            handleTyping,
+            isDeleting ? backspaceSpeed : typingSpeed
+        )
+
+        return () => clearTimeout(timer)
+    }, [charIndex, isDeleting, index, texts])
 
     return (
-        <div className="w-full">
-            <div className="flex items-start bg-[#0F071F] rounded-3xl shadow-lg px-4 py-3 border border-purple-500/30">
-                <Search className="w-5 h-5 text-purple-300 mr-3 flex-shrink-0 mt-1" />
-                <div className="flex-1 text-purple-100 text-sm sm:text-base font-medium break-words">
-                    {displayText}
-                    <motion.span
-                        animate={{ opacity: [0, 1, 0] }}
-                        transition={{ duration: 0.8, repeat: Infinity }}
-                        className="inline-block w-[2px] h-5 bg-purple-300 ml-1 align-text-bottom"
-                    />
+        <div className="w-full mt-24 sm:mt-12 flex items-center justify-center p-2 sm:p-4">
+            <div className="w-full max-w-3xl mx-auto bg-[#171031] rounded-xl shadow-2xl overflow-hidden">
+                {/* MacBook-like top bar */}
+                <div className="bg-[#25104B] sm:px-4 sm:py-2 px-2 py-2 flex items-center">
+                    <div className="flex space-x-2">
+                        <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                        <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                        <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                    </div>
                 </div>
-                <Send className="w-5 h-5 text-purple-300 flex-shrink-0 ml-3 mt-1" />
-            </div>
-        </div>
-    );
-};
 
-export default function AnimatedDashboardPreview() {
-    return (
-        <div className=" relative overflow-hidden mt-12 sm:mt-0">
-            <div className="absolute inset-0 bg-gradient-to-br from-[#0F071F] via-[#0F071F] to-[#0F071F]" />
-            <div className="relative w-full px-4 pt-16 sm:pt-16 flex items-center justify-center">
-                <MacWindow>
-                    <TypingAnimation />
-                </MacWindow>
+                {/* Search bar */}
+                <div className="sm:p-6 p-0">
+                    <div className="relative flex items-center w-full sm:bg-[#0F071F] bg-[#200d46] rounded-2xl">
+                        {/* Search Icon - Visible only on desktop */}
+                        <svg
+                            className="absolute left-3 w-5 h-5 text-purple-300/70 hidden sm:block"
+                            fill="none"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+
+                        <div className="absolute left-0 right-0 whitespace-nowrap overflow-hidden">
+                            <span className="inline-block text-purple-100 text-[12px] sm:text-lg">
+                                {currentText}
+                            </span>
+                            <span className="inline-block w-[2px] h-5 bg-purple-400 ml-1 animate-pulse"></span>
+                        </div>
+
+                        <input
+                            type="text"
+                            className="w-full h-10 bg-transparent text-purple-100 pl-10 pr-10 focus:outline-none placeholder-purple-300/50 text-sm"
+                            disabled
+                        />
+
+                        {/* Send Icon - Visible only on desktop */}
+                        <button
+                            className="absolute right-3 p-1 rounded-full hover:bg-purple-500/10 transition-colors duration-200 hidden sm:block"
+                            aria-label="Send message"
+                        >
+                            <svg
+                                className="w-5 h-5 text-purple-300/70"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="2"
+                                    d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+                                ></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
             </div>
         </div>
-    );
+    )
 }
+
+export default MacbookSearchBar
 

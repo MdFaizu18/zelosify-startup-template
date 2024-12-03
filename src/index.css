@@ -51,6 +51,13 @@
     scroll-margin-top: 40px;
 }
 
+.whitespace-nowrap {
+  white-space: nowrap;
+}
+.overflow-hidden {
+  overflow: hidden;
+}
+
 
 /* this is for scroll bar  */
 html {
