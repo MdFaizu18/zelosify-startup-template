@@ -10,6 +10,7 @@ import VideoSection from "../../components/LandingPage/features/VideoSection";
 import AnimatedDashboardPreview from "../../components/LandingPage/AnimatedDashboardPreview";
 import FeaturesCards from "../../components/LandingPage/features/FeaturesCards";
 import FeaturesSection from "../../components/LandingPage/features/FeaturesSection";
+import VideoDelivery from "../../components/LandingPage/AnimatedDashboardPreview";
 
 export default function LandingPage() {
     return (
@@ -41,7 +42,7 @@ export default function LandingPage() {
                     </button>
                     {/* Dashboard Preview */}
                     {/* <VideoSection /> */}
-                    <AnimatedDashboardPreview />
+                   <VideoDelivery/>
                 </main>
 
                 <FeaturesSection />
