@@ -56,7 +56,7 @@ const MacbookSearchBar = () => {
 
                 {/* Search bar */}
                 <div className="sm:p-6 p-0">
-                    <div className="relative flex items-center w-full sm:bg-[#0F071F] bg-[#200d46] rounded-2xl">
+                    <div className="relative flex items-center w-full sm:bg-[#0F071F] bg-[#200d46] sm:rounded-2xl rounded-0">
                         {/* Search Icon - Visible only on desktop */}
                         <svg
                             className="absolute left-3 w-5 h-5 text-purple-300/70 hidden sm:block"
