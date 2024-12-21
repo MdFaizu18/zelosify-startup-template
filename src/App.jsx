@@ -9,6 +9,7 @@ import RegisterPage from './pages/LandingPage/authentication/RegisterPage';
 import NotFound from './pages/LandingPage/ErrorPage';
 import HomeOutlet from './pages/LandingPage/HomeOutlet'
 import TermsPage from './pages/LandingPage/terms & privacy/TermsPage';
+import DashboardUser from './pages/Dashboard-User/Dashboard/DashboardUser';
 
 
 const router = createBrowserRouter([
@@ -44,6 +45,17 @@ const router = createBrowserRouter([
       {
         path: 'terms',
         element: <TermsPage />,
+      },
+    ],
+  },
+  {
+    path: '/dashboard-user',
+    element: <HomeOutlet />,
+    errorElement: <NotFound />,
+    children: [
+      {
+        index: true,
+        element: <DashboardUser />,
       },
     ],
   },
