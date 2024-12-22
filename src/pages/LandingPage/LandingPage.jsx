@@ -11,8 +11,10 @@ import AnimatedDashboardPreview from "../../components/LandingPage/AnimatedDashb
 import FeaturesCards from "../../components/LandingPage/features/FeaturesCards";
 import FeaturesSection from "../../components/LandingPage/features/FeaturesSection";
 import VideoDelivery from "../../components/LandingPage/AnimatedDashboardPreview";
+import { useNavigate } from "react-router-dom";
 
 export default function LandingPage() {
+    const navigate = useNavigate();
     return (
         <>
             <div>
@@ -36,9 +38,11 @@ export default function LandingPage() {
                     <p className="text-gray-400 text-lg md:text-2xl max-w-3xl mx-auto mb-12">
                         Zelosify makes it Effortless to manage contracts, unlock instant insights, and boost your bottom line.  </p>
 
-                    <button className="bg-purple-600 hover:bg-purple-700 text-lg px-6 py-2 rounded-lg font-medium">
+                    <button
+                        className="bg-purple-600 hover:bg-purple-700 text-lg px-6 py-2 rounded-lg font-medium"
+                        onClick={() => navigate("/dashboard")}
+                    >
                         Join Private Beta
-
                     </button>
                     {/* Dashboard Preview */}
                     {/* <VideoSection /> */}

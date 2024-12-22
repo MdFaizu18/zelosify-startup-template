@@ -49,7 +49,7 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: '/dashboard-user',
+    path: '/dashboard',
     element: <HomeOutlet />,
     errorElement: <NotFound />,
     children: [
