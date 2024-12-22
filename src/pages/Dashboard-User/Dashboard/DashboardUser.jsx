@@ -16,6 +16,14 @@ import {
     Legend,
     ResponsiveContainer
 } from 'recharts';
+import { Helmet } from 'react-helmet';
+import Logo from '../../../assets/logos/zelosify02.png'
+import VendorStats from '../../../components/Dashboard/Stats/VendorStats';
+import ContractsChart from '../../../components/Dashboard/charts/ContractsChart';
+import VendorInsightsChart from '../../../components/Dashboard/charts/VendorInsightsChart';
+import VendorSatisfactionChart from '../../../components/Dashboard/charts/VendorSatisfactionChart';
+import ComplianceChart from '../../../components/Dashboard/charts/ComplianceChart';
+import Sidebar from '../../../components/Dashboard/sidebar/Sidebar';
 
 const contractsData = [
     { day: 'Monday', online: 15, offline: 12 },
@@ -79,40 +87,18 @@ export default function DashboardUser() {
 
     return (
         <div className="flex min-h-screen bg-white">
-            {/* Sidebar */}
-            <div className="w-64 border-r border-gray-100">
-                <div className="p-6">
-                    <img src="/placeholder.svg?height=30&width=100" alt="Zelosify" className="h-8" />
-                </div>
-                <div className="px-3">
-                    {[
-                        { icon: BarChart2, label: 'Dashboard', active: true },
-                        { icon: BarChart2, label: 'Top Vendors statistics' },
-                        { icon: FileText, label: 'Contract details' },
-                        { icon: PieChart, label: 'Insights Report' },
-                        { icon: MessageSquare, label: 'Messages' },
-                        { icon: Settings, label: 'Settings' },
-                        { icon: LogOut, label: 'Sign Out' },
-                    ].map((item) => (
-                        <button
-                            key={item.label}
-                            onClick={() => setActiveNav(item.label)}
-                            className={`w-full flex items-center space-x-3 px-4 py-2.5 rounded-lg mb-1 ${activeNav === item.label
-                                    ? 'bg-emerald-500 text-white'
-                                    : 'text-gray-600 hover:bg-gray-50'
-                                }`}
-                        >
-                            <item.icon className="h-5 w-5" />
-                            <span className="text-sm font-medium">{item.label}</span>
-                        </button>
-                    ))}
-                </div>
+            <div>
+                <Helmet>
+                    <title>Dashboard Analaytics | zelosify</title>
+                </Helmet>
             </div>
+            {/* Sidebar */}
+           <Sidebar/>
 
             {/* Main Content */}
             <div className="flex-1">
                 {/* Header */}
-                <header className="h-16 border-b border-gray-100 px-6 flex items-center justify-between">
+                <header className="h-20 border-b border-gray-100 px-6 flex items-center justify-between">
                     <h1 className="text-xl font-semibold">Dashboard</h1>
                     <div className="flex items-center space-x-4">
                         <div className="relative">
@@ -146,120 +132,41 @@ export default function DashboardUser() {
                 </header>
 
                 {/* Main Content */}
-                <main className="p-6">
+                <main className="p-6 bg-[#f7fdf8ec]">
                     {/* Stats Grid */}
-                    <div className="grid grid-cols-4 gap-6 mb-6">
-                        {[
-                            { value: '$1k', label: 'contract approved', change: '+5% from yesterday', bg: 'bg-red-50' },
-                            { value: '300', label: 'Total contract', change: '+2% from yesterday', bg: 'bg-yellow-50' },
-                            { value: '5', label: 'contract in progress', change: '+3% from yesterday', bg: 'bg-green-50' },
-                            { value: '2', label: 'New Vendors', change: '+0% from yesterday', bg: 'bg-purple-50' },
-                        ].map((stat, i) => (
-                            <div key={i} className={`${stat.bg} rounded-lg p-6`}>
-                                <div className="text-2xl font-semibold mb-1">{stat.value}</div>
-                                <div className="text-sm text-gray-600 mb-4">{stat.label}</div>
-                                <div className="text-xs text-emerald-600">{stat.change}</div>
-                            </div>
-                        ))}
+                    <div className="flex flex-wrap lg:flex-nowrap gap-x-6 py-4">
+                        {/* First Component: VendorStats */}
+                        <div className="w-full lg:w-3/5 pt-4">
+                            <VendorStats />
+                        </div>
+
+                        {/* Second Component: Contracts Bar Chart */}
+                        <div className="lg:w-2/5 ">
+                            <ContractsChart />
+                        </div>
+
+
                     </div>
 
+
                     {/* Charts Grid */}
-                    <div className="grid grid-cols-2 gap-6">
                         {/* Total Contracts Chart */}
-                        <div className="bg-white rounded-lg p-6 border border-gray-100">
-                            <div className="flex justify-between items-center mb-6">
-                                <h2 className="text-lg font-semibold">Total Contracts approved</h2>
-                                <button className="text-sm text-gray-500">Export</button>
+                        <div className="flex flex-wrap gap-4 pb-6">
+                            <div className="w-full lg:w-[45%]">
+                                <VendorInsightsChart />
                             </div>
-                            <div className="h-[300px]">
-                                <ResponsiveContainer width="100%" height="100%">
-                                    <BarChart data={contractsData}>
-                                        <CartesianGrid strokeDasharray="3 3" />
-                                        <XAxis dataKey="day" />
-                                        <YAxis />
-                                        <Tooltip />
-                                        <Bar dataKey="online" fill="#3b82f6" />
-                                        <Bar dataKey="offline" fill="#10b981" />
-                                    </BarChart>
-                                </ResponsiveContainer>
+                            <div className="w-full lg:w-[30%]">
+                                <VendorSatisfactionChart />
+                            </div>
+                            <div className="w-full lg:w-[20%]">
+                            
                             </div>
                         </div>
 
-                        {/* Vendor Insights Chart */}
-                        <div className="bg-white rounded-lg p-6 border border-gray-100">
-                            <h2 className="text-lg font-semibold mb-6">Vendor Insights</h2>
-                            <div className="h-[300px]">
-                                <ResponsiveContainer width="100%" height="100%">
-                                    <LineChart data={vendorInsightsData}>
-                                        <CartesianGrid strokeDasharray="3 3" />
-                                        <XAxis dataKey="month" />
-                                        <YAxis />
-                                        <Tooltip />
-                                        <Line type="monotone" dataKey="oldVendors" stroke="#8b5cf6" strokeWidth={2} />
-                                        <Line type="monotone" dataKey="newVendors" stroke="#ef4444" strokeWidth={2} />
-                                    </LineChart>
-                                </ResponsiveContainer>
-                            </div>
-                        </div>
 
-                        {/* Vendor Satisfaction Chart */}
-                        <div className="bg-white rounded-lg p-6 border border-gray-100">
-                            <h2 className="text-lg font-semibold mb-6">vendor Satisfaction</h2>
-                            <div className="h-[300px]">
-                                <ResponsiveContainer width="100%" height="100%">
-                                    <AreaChart data={satisfactionData}>
-                                        <CartesianGrid strokeDasharray="3 3" />
-                                        <XAxis dataKey="month" />
-                                        <YAxis />
-                                        <Tooltip />
-                                        <Area
-                                            type="monotone"
-                                            dataKey="thisMonth"
-                                            stroke="#10b981"
-                                            fill="#10b981"
-                                            fillOpacity={0.1}
-                                        />
-                                        <Area
-                                            type="monotone"
-                                            dataKey="lastMonth"
-                                            stroke="#3b82f6"
-                                            fill="#3b82f6"
-                                            fillOpacity={0.1}
-                                        />
-                                    </AreaChart>
-                                </ResponsiveContainer>
-                            </div>
-                        </div>
 
-                        {/* Compliance Chart */}
-                        <div className="bg-white rounded-lg p-6 border border-gray-100">
-                            <h2 className="text-lg font-semibold mb-6">Compliance Target vs Reality</h2>
-                            <div className="h-[300px]">
-                                <ResponsiveContainer width="100%" height="100%">
-                                    <BarChart data={complianceData}>
-                                        <CartesianGrid strokeDasharray="3 3" />
-                                        <XAxis dataKey="month" />
-                                        <YAxis />
-                                        <Tooltip />
-                                        <Bar dataKey="actual" fill="#10b981" />
-                                        <Bar dataKey="target" fill="#f59e0b" />
-                                    </BarChart>
-                                </ResponsiveContainer>
-                            </div>
-                            <div className="flex items-center justify-between mt-4">
-                                <div className="flex items-center space-x-2">
-                                    <div className="h-3 w-3 bg-emerald-500 rounded"></div>
-                                    <span className="text-sm text-gray-600">Actual compliance</span>
-                                    <span className="text-sm font-medium">8.823</span>
-                                </div>
-                                <div className="flex items-center space-x-2">
-                                    <div className="h-3 w-3 bg-yellow-500 rounded"></div>
-                                    <span className="text-sm text-gray-600">Target compliance</span>
-                                    <span className="text-sm font-medium">13.122</span>
-                                </div>
-                            </div>
-                        </div>
-
+                    <div className="grid grid-cols-3 gap-6">
+                        <ComplianceChart />
                         {/* Top Vendor Items */}
                         <div className="bg-white rounded-lg p-6 border border-gray-100">
                             <h2 className="text-lg font-semibold mb-6">Top Vendor Items</h2>
