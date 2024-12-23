@@ -123,7 +123,7 @@ export default function DashboardUser() {
                                 className="h-8 w-8 rounded-full"
                             />
                             <div>
-                                <div className="text-sm font-medium">Pedro</div>
+                                <div className="text-sm font-medium">John</div>
                                 <div className="text-xs text-gray-500">Admin</div>
                             </div>
                             <ChevronDown className="h-4 w-4 text-gray-500" />
